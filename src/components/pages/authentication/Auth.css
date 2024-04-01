@@ -1,0 +1,125 @@
+body.active-modal {
+    overflow-y: hidden;
+    color: #424242;
+}
+
+
+.modal, .overlay {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: fixed;
+    background: rgba(49,49,49,0.8);
+}
+
+.overlay {
+    background: rgba(49,49,49,0.8);
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 1.4;
+    background: #fff;
+    padding: 24px 28px;
+    border-radius: 4px;
+    width: 600px;
+    /* min-width: 300px; */
+    
+}
+
+.close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 7px;
+    cursor: pointer;
+    height: 24px;
+    width: 24px;
+}
+
+.account-cta span  {
+    color: #89369E;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.container {
+    margin: 70px auto;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+.container div {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    width: 580px;
+}
+.container h1 {
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+}
+
+
+
+.input-field {
+    display: flex;
+    width: -webkit-fill-available;
+    height: 44px;
+    padding: 0px 16px;
+    align-items: center;
+    flex-shrink: 0;
+    border-radius: var(--Spacing-System-Corner-radius-Radius-8, 8px);
+    border: 1px solid var(--primary-180, #89369E);
+}
+
+.login-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* border-right: 2px solid rgba(83, 35, 95, 1);
+    padding-right: 48px; */
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap:24px;
+}
+.user-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+
+}
+img {
+    width: 540px;
+    height: 496px;
+    flex-shrink: 0;
+}
+
+.googlebutton {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.googlebutton img {
+    height: 24px;
+    width: 24px;
+}
+header h1 {
+    text-align: center;
+}
+p {
+    font-size: 14px;
+}

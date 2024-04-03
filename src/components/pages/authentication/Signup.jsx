@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 import userAuthContext from "../../../context/UserAuthContext";
 import { useNavigate } from "react-router-dom";
 import Button from '../../layout/Button'
-import "../authentication/Auth.css";
+import "./Auth.css";
 import Navbar from "../../layout/Navbar";
 import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";

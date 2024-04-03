@@ -1,6 +1,6 @@
 import Navbar from "../../layout/Navbar"
 import Button from "../../layout/Button"
-import "../authentication/Auth.css";
+import "../Authentication/Auth.css";
 
 function Home() {
   

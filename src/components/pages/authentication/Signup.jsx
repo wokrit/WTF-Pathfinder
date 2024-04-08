@@ -1,31 +1,41 @@
 import { useState, useContext } from "react";
 import userAuthContext from "../../../context/UserAuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from '../../layout/Button'
 import "./Auth.css";
 import Navbar from "../../layout/Navbar";
 import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";
+import { PiEyeSlashLight } from "react-icons/pi";
+import { PiEyeLight } from "react-icons/pi";
 
 function Signup() {
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [modal, setModal] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
+    // const [errorMessage, setErrorMessage] = useState("");
 
     const { signUp, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        setError("");
+      e.preventDefault();
+      // setError("");
+      if (password === confirmPassword) {
         try {
           await signUp(email, password);
           navigate("/login");
-        } catch (err) {
-          setError(err.message);
+        } catch (error) {
+          setError("Sorry, something went wrong. Please try again");
         }
+      } else {
+        setError("Passwords do not match. Please check and try again")
+      }
     }
+    
     const handleGoogleSignIn = async (e) => {
       e.preventDefault();
       try {
@@ -33,6 +43,7 @@ function Signup() {
         navigate("/login");
       } catch (error) {
         console.log(error.message);
+        setError("Sorry, something went wrong. Please try again");
       }
     };
 
@@ -64,7 +75,7 @@ function Signup() {
                       insights whenever you need them
                   </p>
                   <div className="account-cta">
-                    <p>Already have an account? <span>Log In</span></p>
+                    <p>Already have an account? <span><Link to="/login">Log In</Link></span></p>
                   </div>
                 </header>
 
@@ -74,49 +85,60 @@ function Signup() {
                     Sign Up with Google
                   </div>  
                 </Button>
-                <h3 style={{ textAlign: 'center' }}>OR</h3>
+                <h5 style={{ textAlign: 'center' }}>OR</h5>
                 <form onSubmit={handleSubmit}>
-                    <div className="user-detail">
-                        <label>Email</label>
-                        <input 
-                            className="input-field" 
-                            type="email" 
-                            placeholder="Enter your email"
-                            onChange={(e) => setEmail(e.target.value)}
-                        >
-                        </input>
-                    </div>
-                    <div className="user-detail">
-                        <label>Password</label>
-                        <input 
-                            className="input-field" 
-                            type="password"
-                            placeholder="xxxxxx"
-                            onChange={(e) => setPassword(e.target.value)}
-                        >
-                        </input>
-                    </div>
-                    <br />
-                    <Button type="Submit" variant="primary">
-                        Sign Up
-                    </Button>
-                
-                    {/* <GoogleButton
-                      className="btn"
-                      variant="primary"
-                      type="button"
-                      onClick={handleGoogleSignup}
-                    /> */}
-                </form>
-                
-                    
-                      
-                      
-              </div>
-                
-            </div>
-          </div>
+                  <div className="user-detail">
+                    <label>Email</label>
+                    <input 
+                      className="input-field" 
+                      type="email" 
+                      placeholder="Enter your email"
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                    >
+                    </input>
+                  </div>
+
+                  <div className="user-detail">
+                    <label>Password</label>
+                    <input 
+                      className="input-field" 
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Password"
+                      value={password}
+                      onChange={(e) => setPassword(e.target.value)}
+                    />
+                    {showPassword ? (
+                        <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                      ) : (
+                        <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                      )}
+                  </div>
         
+                  <div className="user-detail">
+                    <label>Confirm Password</label>
+                    <input 
+                      className="input-field" 
+                      type={showPassword ? "text" : "password"}
+                      placeholder="Confirm Password"
+                      value={confirmPassword}
+                      onChange={(e) => setConfirmPassword(e.target.value)}
+                    />
+                    {showPassword ? (
+                        <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                      ) : (
+                        <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                      )}
+                    <div className="error-message">{ "" !== error && error }</div>
+                  </div>
+
+                  <Button type="Submit" variant="primary">
+                      Sign Up
+                  </Button>
+                </form>                      
+              </div>                
+            </div>
+          </div>      
         </div>
       )}
     </>

@@ -54,6 +54,10 @@ body.active-modal {
     display:flex;
     flex-direction: row;
     justify-content: space-around;
+    background: rgba(254, 248, 244, 1);
+    padding: 40px 0;
+    background-image: url('/src/assets/4.png');
+
 
 }
 .container div {
@@ -68,7 +72,8 @@ body.active-modal {
     font-size: 60px;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%;
+    line-height: normal;
+    max-height: 120px;
 }
 
 
@@ -112,8 +117,8 @@ form {
 
 
 img {
-    width: 540px;
-    height: 496px;
+    width: 628px;
+    height: 464px;
     flex-shrink: 0;
 }
 

@@ -10,13 +10,13 @@ function Home() {
       <Navbar />
       <div className="container">
         <div>
-          <h1>Unveil Your Ideal Tech Career Path with Path-Finder</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor senectus id bibendum vitae condimentum gravida morbi vitae. Rhoncus diam sed molestie et, iaculis lorem a. </p>
+          <h1>Unlock Your Future with <span style={{color:"#89369E"}}>Path-Finder!</span></h1>
+          <p style={{fontSize:"16px"}}>Find Your Perfect Tech Career Match Through Psychometric Evaluation</p>
           <Button variant="primary">
             Take Assessment
           </Button>
         </div>
-        <img src="..\src\assets\Group 121.png"></img>
+        <img src="..\src\assets\Hero Slide Accordion.png"></img>
       </div>
       
     </>

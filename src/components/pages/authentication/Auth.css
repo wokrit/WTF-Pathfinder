@@ -19,15 +19,16 @@ body.active-modal {
     background: rgba(49,49,49,0.8);
 }
 .modal-content {
+    box-sizing: border-box;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
     background: #fff;
-    padding: 24px 28px;
+    padding: 24px 98px;
     border-radius: 4px;
-    width: 600px;
+    width: 50%;
     /* min-width: 300px; */
     
 }
@@ -44,7 +45,7 @@ body.active-modal {
 
 .account-cta span  {
     color: #89369E;
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: underline;
 }
 
@@ -53,6 +54,10 @@ body.active-modal {
     display:flex;
     flex-direction: row;
     justify-content: space-around;
+    background: rgba(254, 248, 244, 1);
+    padding: 40px 0;
+    background-image: url('/src/assets/4.png');
+
 
 }
 .container div {
@@ -67,7 +72,8 @@ body.active-modal {
     font-size: 60px;
     font-style: normal;
     font-weight: 700;
-    line-height: 110%;
+    line-height: normal;
+    max-height: 120px;
 }
 
 
@@ -80,13 +86,18 @@ body.active-modal {
     align-items: center;
     flex-shrink: 0;
     border-radius: var(--Spacing-System-Corner-radius-Radius-8, 8px);
-    border: 1px solid var(--primary-180, #89369E);
+    border: 1px solid var(--primary-180, #353535);
+}
+
+.input-field:focus {
+    border: 2px solid #89369E;
+    outline: none;
 }
 
 .login-details {
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: 12px;
     /* border-right: 2px solid rgba(83, 35, 95, 1);
     padding-right: 48px; */
 }
@@ -100,11 +111,14 @@ form {
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
+    position: relative;
 
 }
+
+
 img {
-    width: 540px;
-    height: 496px;
+    width: 628px;
+    height: 464px;
     flex-shrink: 0;
 }
 
@@ -119,7 +133,22 @@ img {
 }
 header h1 {
     text-align: center;
+    font-size: 24px;
 }
 p {
     font-size: 14px;
+}
+.error-message {
+    font-size: 12px;
+    color: red;
+}
+.icon {
+    width: 24px;
+    height: 24px;
+    color: #353535;
+    position: absolute;
+    top: 50%;
+    /* transform: translateY(-50%); */
+    right: 16px;
+    cursor: pointer;
 }

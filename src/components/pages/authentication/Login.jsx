@@ -1,28 +1,31 @@
 import { useState, useContext } from "react";
 import userAuthContext from "../../../context/UserAuthContext";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from '../../layout/Button'
 import './Auth.css'
 import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";
+import { PiEyeSlashLight } from "react-icons/pi";
+import { PiEyeLight } from "react-icons/pi";
+
 
 function Login() {
     const [email, setEmail] = useState("");
     const [error, setError] = useState("");
     const [password, setPassword] = useState("");
     const [modal, setModal] = useState(true);
+    const [showPassword, setShowPassword] = useState(false);
 
     const { logIn, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setError("");
         try {
           await logIn(email, password);
-          navigate("/");
-        } catch (err) {
-          setError(err.message);
+          navigate("/quiz");
+        } catch (error) {
+          setError("Your username or password is incorrect");
         }
     }
 
@@ -30,7 +33,7 @@ function Login() {
       e.preventDefault();
       try {
         await googleSignIn();
-        navigate("/");
+        navigate("/quiz");
       } catch (error) {
         console.log(error.message);
       }
@@ -66,7 +69,7 @@ function Login() {
                     Continue with Google
                   </div>  
                 </Button>
-                <h3 style={{ textAlign: 'center' }}>OR</h3>
+                <h5 style={{ textAlign: 'center' }}>OR</h5>
                 <form onSubmit={handleSubmit}>
                     <div className="user-detail">
                         <label>Email</label>
@@ -82,17 +85,25 @@ function Login() {
                         <label>Password</label>
                         <input 
                             className="input-field" 
-                            type="password"
-                            placeholder="xxxxxx"
+                            type={showPassword ? "text" : "password"}
+                            placeholder="Password"
                             onChange={(e) => setPassword(e.target.value)}
-                        >
-                        </input>
+                        />
+                        {showPassword ? (
+                        <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                      ) : (
+                        <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                      )}
+                      <div className="error-message">{ "" !== error && error }</div>
                     </div>
-                    <br />
+                  
                     <Button type="Submit" variant="primary">
                       Login
                     </Button>
                 </form>
+                <div className="account-cta">
+                    <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup">Create Account</Link></span></p>
+                </div>
                 
                     
                       

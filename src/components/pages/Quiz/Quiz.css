@@ -283,3 +283,11 @@ footer .footer_copyright {
   width: 44px;
   height: 44px;
 }
+.scores-container{
+  padding:16px;
+  border:#5F0C74 1px solid;
+  border-radius: 10px;
+  width: 320px;
+  /* list-style-type: none; */
+
+}

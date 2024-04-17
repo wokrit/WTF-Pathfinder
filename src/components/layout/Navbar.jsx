@@ -11,14 +11,14 @@ function Navbar() {
     const handleSignup = () => {
         navigate("/Signup");
     }
-    const handleLogin = () => {
-        navigate("/Login");
-    }
+    // const handleLogin = () => {
+    //     navigate("/Login");
+    // }
 
   return (
     <>
         <nav className="navbar">
-            <img className="wtf-logo" src="./src/assets/WT-LOGO-1 1.png"></img>
+            <img className="wtf-logo" alt="WTF Logo" src="./src/assets/WT-LOGO-1 1.png" onClick={() => navigate("/")}  />
             <ul className="nav-links">
                 <li>About</li>
                 <li>Programs</li>
@@ -26,9 +26,9 @@ function Navbar() {
                 <li>Contact</li>
             </ul>  
             <div className="nav-buttons">
-                <Button type="button" variant="secondary" onClick={handleLogin}>
+                {/* <Button type="button" variant="secondary" onClick={handleLogin}>
                     Login
-                </Button>
+                </Button> */}
                 <Button type="button" variant="primary" onClick={handleSignup}>
                     Take Assesment
                 </Button>

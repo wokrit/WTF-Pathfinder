@@ -6,6 +6,8 @@ import Signup from "./components/pages/Authentication/Signup"
 import { UserAuthContextProvider } from "./context/UserAuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Quiz from "./components/pages/Quiz/Quiz"
+import ProgressBar from "./components/layout/ProgressBar"
+import Instructions from "./components/pages/Quiz/Instructions"
 
 
 function App() {
@@ -24,7 +26,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/quiz" element={<Quiz />} />
-        
+            <Route path="/instructions" element={<Instructions />} />
            
             
           </Routes>

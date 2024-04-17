@@ -70,9 +70,7 @@ function Signup() {
                 <header>
                   <IoCloseOutline className="close-modal" onClick={toggleModal} />
                   <h1>Create Account</h1>
-                  <p>Before proceeding with the assessment, please create your Pathfinder account. Signing in allows us to securely
-                      save your assessment results and data, ensuring that you have access to personalized career recommendations and
-                      insights whenever you need them
+                  <p>Before proceeding with the assessment, please create your Pathfinder account.
                   </p>
                   <div className="account-cta">
                     <p>Already have an account? <span><Link to="/login">Log In</Link></span></p>
@@ -85,7 +83,7 @@ function Signup() {
                     Sign Up with Google
                   </div>  
                 </Button>
-                <h5 style={{ textAlign: 'center' }}>OR</h5>
+                <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
                 <form onSubmit={handleSubmit}>
                   <div className="user-detail">
                     <label>Email</label>
@@ -135,7 +133,8 @@ function Signup() {
                   <Button type="Submit" variant="primary">
                       Sign Up
                   </Button>
-                </form>                      
+                </form>
+                <p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service and Privacy Policy</span></p>                      
               </div>                
             </div>
           </div>      

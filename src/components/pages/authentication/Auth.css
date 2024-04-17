@@ -30,7 +30,7 @@
     padding: 24px 80px;
     border-radius: 4px;
     width: 50%;
-    height: 90%;
+    /* height: 90%; */
     overflow-y: auto;
     /* min-width: 300px; */  
 }
@@ -108,7 +108,7 @@
 form {
     display: flex;
     flex-direction: column;
-    gap:24px;
+    gap:16px;
 }
 .user-detail {
     display: flex;

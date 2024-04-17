@@ -20,6 +20,7 @@ function Progressbar({score, showPercentage}) {
 			  {showPercentage && <span className="progressPercent">{score}%</span>}
 		  </div>
 		  
+		  
 	    </>
   )
 }

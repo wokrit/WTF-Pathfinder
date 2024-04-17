@@ -9,6 +9,7 @@ import Navbar from "../../layout/Navbar";
 
 
 
+
 const { sections } = data;
 
 function Quiz() {
@@ -175,9 +176,7 @@ function Quiz() {
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [marks, setMarks] = useState(0)
     const [errorMsg, setErrorMsg] = useState(null)
-
     
-
     const handleResponse = (answerID, correct, scores={}) => {
         setSelectedAnswer(answerID);
         setErrorMsg(null)
@@ -318,6 +317,7 @@ function Quiz() {
     <>
         <Navbar />
 
+
         {finalScores === null ? (
             <div className="quiz-box">
                 <header className="quiz-header">
@@ -326,7 +326,7 @@ function Quiz() {
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                                 <path d="M13.8302 19.0003C13.6808 19.0008 13.5332 18.9678 13.3982 18.9038C13.2632 18.8398 13.1443 18.7463 13.0502 18.6303L8.22016 12.6303C8.07308 12.4513 7.99268 12.2269 7.99268 11.9953C7.99268 11.7637 8.07308 11.5392 8.22016 11.3603L13.2202 5.36028C13.3899 5.15606 13.6338 5.02763 13.8982 5.00325C14.1627 4.97888 14.4259 5.06054 14.6302 5.23028C14.8344 5.40001 14.9628 5.64393 14.9872 5.90835C15.0116 6.17278 14.9299 6.43606 14.7602 6.64028L10.2902 12.0003L14.6102 17.3603C14.7324 17.5071 14.8101 17.6858 14.834 17.8753C14.8579 18.0649 14.827 18.2573 14.7449 18.4299C14.6629 18.6024 14.5331 18.7478 14.371 18.8489C14.2089 18.95 14.0212 19.0025 13.8302 19.0003Z" fill="#424242"/>
                             </svg>
-                            <p>Back</p>
+                            <p style={{fontWeight:"600"}}>Back</p>
                         </div>
                     )}
                     <div className="header-title">
@@ -359,10 +359,26 @@ function Quiz() {
                                         {
                                             selectedAnswer === answerID 
                                             ? 
-                                            <FaCircleCheck style={{ width: '44px', height: '44px', color:'#5F0C74' }} />
+                                            // <FaCircleCheck style={{ width: '44px', height: '44px', color:'#5F0C74' }} />
+                                            <div className="svg-container">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 99 100" fill="none">
+                                                    <circle cx="49.5" cy="50.1539" r="46" fill="#8A369E" stroke="#8A369E" strokeWidth="7"/>
+                                                </svg>
+                                                <svg className="checkmark-svg" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 80 79" fill="none">
+                                                    <rect x="17.7261" y="0.985908" width="63" height="63" transform="rotate(15 17.7261 0.985908)"/>
+                                                    <path d="M56.7746 28.1887C56.2714 27.7012 55.6771 27.3176 55.0256 27.06C54.374 26.8024 53.6781 26.6757 52.9776 26.6872C52.2771 26.6988 51.5858 26.8483 50.9431 27.1272C50.3004 27.4061 49.719 27.809 49.2321 28.3128L35.0564 42.9616L31.0494 36.0214C30.706 35.402 30.2428 34.8573 29.6866 34.4189C29.1304 33.9805 28.4925 33.6572 27.8101 33.468C27.1276 33.2788 26.4143 33.2273 25.7118 33.3167C25.0093 33.4061 24.3316 33.6345 23.7183 33.9886C23.105 34.3427 22.5684 34.8154 22.1397 35.3791C21.711 35.9428 21.3989 36.5862 21.2216 37.2719C21.0442 37.9575 21.0052 38.6715 21.1068 39.3724C21.2084 40.0733 21.4485 40.7469 21.8132 41.3539L29.3557 54.4179C30.0678 55.655 31.2379 56.5428 32.5927 56.9058L33.32 57.0455C34.1392 57.1466 34.9707 57.0562 35.7491 56.7814C36.5274 56.5065 37.2313 56.0548 37.8054 55.4617L56.8961 35.7304C57.3833 35.2273 57.7667 34.6331 58.0243 33.9817C58.2819 33.3304 58.4087 32.6347 58.3974 31.9344C58.3861 31.2341 58.237 30.5428 57.9585 29.9001C57.6801 29.2574 57.2778 28.6759 56.7746 28.1887Z" fill="#FAFAFA"/>
+                                                </svg>
+                                            </div>
                                             : 
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 45 44" fill="none">
-                                                <circle cx="22.0889" cy="22" r="21.5" fill="white" stroke="#5F0C74"/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 71 70" fill="none">
+                                                <circle cx="35.5889" cy="35" r="32.5" transform="rotate(-90 35.5889 35)" stroke="url(#paint0_linear_1070_206)" strokeWidth="5"/>
+                                                <defs>
+                                                <linearGradient id="paint0_linear_1070_206" x1="21.1183" y1="-4.52941" x2="35.9418" y2="85.1176" gradientUnits="userSpaceOnUse">
+                                                <stop offset="0.157538" stopColor="#390746"/>
+                                                <stop offset="0.679147" stopColor="#FBE9DB"/>
+                                                <stop offset="0.975" stopColor="#720E8B"/>
+                                                </linearGradient>
+                                                </defs>
                                             </svg>
                                             // <FaRegCircle  style={{ width: '44px', height: '44px', color:'#5F0C74' }}/>
                                         }
@@ -397,10 +413,10 @@ function Quiz() {
                         selectedAnswer && handleNextQuestion()
                     }}>
                         {currentQuestion < sections[currentSection].questions.length - 1
-                        ? "Next"
+                        ? "Next Question"
                         : currentSection < sections.length - 1
                         ? "Next Section"
-                        : "Finish"}
+                        : "Finish Assesment"}
                     </Button>
                     
                     

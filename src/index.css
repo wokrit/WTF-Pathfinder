@@ -1,5 +1,6 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif; */
+  font-family: inter;
   line-height: 1.5;
   font-weight: 400;
 }
@@ -37,6 +38,7 @@
   justify-content: space-around;
   align-items: center;
   gap: 147.5px;
+  padding: 8px 0;
  
 }
 /* .navbar ul {
@@ -64,4 +66,32 @@
   display: flex;
   align-items: flex-start;
   gap: 24px;
+}
+.progressbar{
+	position: relative;
+	overflow: hidden;
+  width: 800px;
+  height: 12px;
+	/* background-color: #eee; */
+  border-radius: 16px;
+  border: 2px solid #E3CFE8;
+}
+
+.progressPercent{
+	font-weight: 600;
+  font-size: 14px;
+	/* font-family:'Franklin Gothic Medium'; */
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	color: #eee;
+	text-shadow: -1px 0 #555, 0 1px #555, 1px 0 #555, 0 -1px #555;
+  
+}
+
+@media screen and (max-width: 720px) {
+  .progressbar {
+    width:100px;
+  }
 }

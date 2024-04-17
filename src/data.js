@@ -1,34 +1,29 @@
 const data = {
     sections : [
         {
-            title: "Mathematics",
+            title: "Mathematical Aptitude",
             questions: [
                 {
-                    question: "2 + 2 = ?",
+                    question: "What is the next number in the sequence: 10, 12, 14, 16 ___?",
                     answers: [
                       {
                           answerID : 'A', 
-                          answerText: '4', 
-                          correct: true
-                      },
-                      {
-                          answerID : 'B', 
-                          answerText: '5', 
+                          answerText: '20', 
                           correct: false
                       },
                       {
+                          answerID : 'B', 
+                          answerText: '18', 
+                          correct: true
+                      },
+                      {
                           answerID : 'C', 
-                          answerText: '6', 
+                          answerText: '24', 
                           correct: false
                       },
                       {
                           answerID : 'D', 
-                          answerText: '7', 
-                          correct: false
-                      },
-                      {
-                          answerID : 'E', 
-                          answerText: '8', 
+                          answerText: '26', 
                           correct: false
                       }
                     ],
@@ -36,121 +31,232 @@ const data = {
                 },
           
                 {
-                    question: "What is the square root of 100?",
+                    question: "What is the next number in the sequence: 5, 25, 125, ___",
                     answers: [
                         {
                             answerID : 'A', 
-                            answerText: '6', 
+                            answerText: '225', 
                             correct: false
                         },
                         {
                             answerID : 'B', 
-                            answerText: '8', 
-                            correct: false
-                        },
-                        {
-                            answerID : 'C', 
-                            answerText: '10', 
+                            answerText: '625', 
                             correct: true
                         },
                         {
-                            answerID : 'D', 
-                            answerText: '12', 
+                            answerID : 'C', 
+                            answerText: '130', 
                             correct: false
                         },
                         {
-                            answerID : 'E', 
-                            answerText: '5', 
+                            answerID : 'D', 
+                            answerText: '125', 
                             correct: false
                         }
                     ]
                 },
                 {
-                    question: "What is the square root of 64?",
+                    question: "What is the formula to calculate the mean (average) of a set of numbers? ",
                     answers: [
                         {
                             answerID : 'A', 
-                            answerText: '6', 
-                            correct: false
-                        },
-                        {
-                            answerID : 'B', 
-                            answerText: '8', 
+                            answerText: 'Mean = Sum of numbers / Count of numbers', 
                             correct: true
                         },
                         {
+                            answerID : 'B', 
+                            answerText: ' Mean = Count of numbers / Sum of numbers', 
+                            correct: false
+                        },
+                        {
                             answerID : 'C', 
-                            answerText: '10', 
+                            answerText: 'Mean = Sum of numbers * Count of numbers ', 
                             correct: false
                         },
                         {
                             answerID : 'D', 
-                            answerText: '12', 
-                            correct: false
-                        },
-                        {
-                            answerID : 'E', 
-                            answerText: '5', 
+                            answerText: 'Mean = Count of numbers - Sum of numbers ', 
                             correct: false
                         }
                     ]
                 },
                 {
-                    question: "What is the square of 4?",
+                    question: "If x=5 and y=3, what is the value of x2 + y2?",
                     answers: [
                         {
                             answerID : 'A', 
-                            answerText: '16', 
+                            answerText: '25', 
                             correct: true
                         },
                         {
                             answerID : 'B', 
-                            answerText: '8', 
+                            answerText: '28', 
                             correct: false
                         },
                         {
                             answerID : 'C', 
-                            answerText: '10', 
+                            answerText: '34', 
                             correct: false
                         },
                         {
                             answerID : 'D', 
-                            answerText: '12', 
-                            correct: false
-                        },
-                        {
-                            answerID : 'E', 
-                            answerText: '5', 
+                            answerText: '30', 
                             correct: false
                         }
                     ]
                 },
                 {
-                    question: "What is the square root of 49?",
+                    question: "If A = 1, B = 2, C = 3, and so on, what is the value of the word 'TECH'?",
                     answers: [
                         {
                             answerID : 'A', 
-                            answerText: '6', 
+                            answerText: '20', 
                             correct: false
                         },
                         {
                             answerID : 'B', 
-                            answerText: '7', 
+                            answerText: '36', 
                             correct: true
                         },
                         {
                             answerID : 'C', 
-                            answerText: '10', 
+                            answerText: '26', 
                             correct: false
                         },
                         {
                             answerID : 'D', 
-                            answerText: '12', 
+                            answerText: '6', 
+                            correct: false
+                        }
+                    ]
+                }
+                
+            ]
+        },
+        {
+            title: "Logical Reasoning",
+            questions: [
+                {
+                    question: "If all cats have tails, and Fluffy is a cat, what can you conclude?",
+                    answers: [
+                        {
+                            answerID : 'A', 
+                            answerText: 'Fluffy has a tail', 
+                            correct: true
+                        },
+                        {
+                            answerID : 'B', 
+                            answerText: 'Fluffy does not have a tail', 
                             correct: false
                         },
                         {
-                            answerID : 'E', 
-                            answerText: '5', 
+                            answerID : 'C', 
+                            answerText: 'Some cats have tails', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'D', 
+                            answerText: 'No conclusion can be drawn', 
+                            correct: false
+                        }
+                    ]
+                },
+                {
+                    question: "If today is Tuesday and 10 days from now will be Friday, what day of the week was it 5 days ago?",
+                    answers: [
+                        {
+                            answerID : 'A', 
+                            answerText: 'Monday', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'B', 
+                            answerText: 'Tuesday', 
+                            correct: true
+                        },
+                        {
+                            answerID : 'C', 
+                            answerText: 'Wednesday', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'D', 
+                            answerText: 'Thursday', 
+                            correct: false
+                        }
+                    ]
+                },
+                {
+                    question: "If all Zivens are Gralls and some Gralls are Pindos, what can be inferred about Zivens and Pindos?",
+                    answers: [
+                        {
+                            answerID : 'A', 
+                            answerText: 'All Zivens are Pindos', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'B', 
+                            answerText: 'Some Zivens may be Pindos, but not all Zivens are necessarily Pindos', 
+                            correct: true
+                        },
+                        {
+                            answerID : 'C', 
+                            answerText: 'None of the above', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'D', 
+                            answerText: 'All of the above ', 
+                            correct: false
+                        }
+                    ]
+                },
+                {
+                    question: "All trees have branches. If this is true, what can you say about a particular tree with branches? ",
+                    answers: [
+                        {
+                            answerID : 'A', 
+                            answerText: ' It is definitely a tree', 
+                            correct: true
+                        },
+                        {
+                            answerID : 'B', 
+                            answerText: 'It may or may not be a tree', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'C', 
+                            answerText: 'It cannot be a tree', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'D', 
+                            answerText: 'No conclusion can be drawn ', 
+                            correct: false
+                        }
+                    ]
+                },
+                {
+                    question: "If some students are tall, and all tall people play basketball, what can you conclude about some students?",
+                    answers: [
+                        {
+                            answerID : 'A', 
+                            answerText: 'Some students play basketball', 
+                            correct: true
+                        },
+                        {
+                            answerID : 'B', 
+                            answerText: 'All students play basketball', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'C', 
+                            answerText: 'No students play basketball', 
+                            correct: false
+                        },
+                        {
+                            answerID : 'D', 
+                            answerText: 'Some students are not tall', 
                             correct: false
                         }
                     ]
@@ -158,7 +264,7 @@ const data = {
             ]
         },
         {
-            title: "Logical Abilities",
+            title: "Personality Traits",
             questions: [
                 {
                     question: "I am an introvert. Do you agree?",
@@ -171,22 +277,22 @@ const data = {
                       {
                           answerID : 'B', 
                           answerText: 'Disagree', 
-                          scores: { product_management: 10, product_design: 10, ThreeD_Design: 10}
+                          scores: { Product_Management: 10, Product_Design: 10, ThreeD_Animation: 10}
                       },
                       {
                           answerID : 'C', 
                           answerText: 'Neutral', 
-                          scores: { cyber_security: 10, data_analysis: 10, blockchain_development: 10 }
+                          scores: { Cyber_Security: 10, Data_Analysis: 10, Blockchain_Development: 10 }
                       },
                       {
                           answerID : 'D', 
                           answerText: 'Agree', 
-                          scores: { cyber_security: 10, data_analysis: 10, blockchain_development: 10 }
+                          scores: { Cyber_Security: 10, Data_Analysis: 10, Blockchain_Development: 10 }
                       },
                       {
                           answerID : 'E', 
                           answerText: 'Strongly Agree', 
-                          scores: { cyber_security: 10, data_analysis: 10, blockchain_development: 10 }
+                          scores: { Cyber_Security: 10, Data_Analysis: 10, Blockchain_Development: 10 }
                       }
                     ],
                     
@@ -198,17 +304,17 @@ const data = {
                         {
                             answerID : 'A', 
                             answerText: 'Agree', 
-                            scores: { product_management: 10 }
+                            scores: { Product_Management: 10 }
                         },
                         {
                             answerID : 'B', 
                             answerText: 'Disagree', 
-                            scores: { software_development: 10}
+                            scores: { Software_Development: 10}
                         },
                         {
                             answerID : 'C', 
                             answerText: 'Neutral', 
-                            scores: { cyber_security: 0}
+                            scores: { Cyber_Security: 0}
                         }
                     ]
                 }

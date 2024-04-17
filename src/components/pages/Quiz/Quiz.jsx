@@ -4,6 +4,8 @@ import Button from "../../layout/Button";
 import { FaCircleCheck } from "react-icons/fa6";
 import { FaRegCircle } from "react-icons/fa";
 import data from "../../../data"
+import ProgressBar from "../../layout/ProgressBar";
+import Navbar from "../../layout/Navbar";
 
 
 
@@ -45,7 +47,7 @@ function Quiz() {
     //         {
     //             answerID : 'B', 
     //             answerText: 'Disagree', 
-    //             scores: { product_management: 10, product_design: 10, ThreeD_Design: 10},
+    //             scores: { product_management: 10, Product_Design: 10, ThreeD_Design: 10},
     //             uncheckedSVG: <div>
     //                                 <svg xmlns="http://www.w3.org/2000/svg" width="85" height="85" viewBox="0 0 99 100" fill="none">
     //                                     <circle cx="49.5" cy="49.6772" r="46" stroke="url(#paint0_linear_136_806)" strokeWidth="7"/>
@@ -159,30 +161,32 @@ function Quiz() {
     const [currentSection, setCurrentSection] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [trackScores, setTrackScores] = useState({
-        software_development: 0,
-        mobile_development: 0,
-        product_design: 0,
-        product_management: 0,
-        cyber_security: 0,
-        data_analysis: 0,
-        blockchain_development: 0,
-        threeD_Design: 0
+        Software_Development: 0,
+        Mobile_Development: 0,
+        Product_Design: 0,
+        Product_Management: 0,
+        Cyber_Security: 0,
+        Data_Analysis: 0,
+        Blockchain_Development: 0,
+        ThreeD_Animation: 0
     });
     // const [showScore, setShowScore] = useState(false)
     const [finalScores, setFinalScores] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null)
     const [marks, setMarks] = useState(0)
+    const [errorMsg, setErrorMsg] = useState(null)
 
     
 
     const handleResponse = (answerID, correct, scores={}) => {
         setSelectedAnswer(answerID);
+        setErrorMsg(null)
 
         console.log("section:", currentSection)
         console.log("status:", correct)
         if (currentSection === 0 && correct) {    
             setMarks(prev => prev + 1)
-            console.log("what")
+            // console.log("what")
         }
         
         if (currentSection > 0) {
@@ -200,11 +204,17 @@ function Quiz() {
 
     const handleNextQuestion = () => {
         console.log(marks)
+        console.log(trackScores)
+        console.log(currentSection === 0 && currentQuestion === sections[currentSection].questions.length - 1)
         if (currentSection === 0 && currentQuestion === sections[currentSection].questions.length - 1) {
           // Last question of the "Mathematics" section
           calculateMathScores();
           setCurrentSection(prev => prev + 1);
           setCurrentQuestion(0)
+        } else if (currentSection === 1 && currentQuestion === sections[currentSection].questions.length - 1) {
+            calculateLogicScores();
+            setCurrentSection(prev => prev + 1);
+            setCurrentQuestion(0)
         } else if (currentQuestion < sections[currentSection].questions.length - 1) {
           setCurrentQuestion(prev => prev + 1);
         } else if (currentSection < sections.length - 1) {
@@ -214,35 +224,68 @@ function Quiz() {
           // Last question in the last section (other than "Mathematics"), calculate final scores again
           calculateFinalScores();
         }
+        setSelectedAnswer(null)
     };
 
     const calculateMathScores = () => {
-        const mathSection = sections.find(section => section.title === "Mathematics");
+        const mathSection = sections.find(section => section.title === "Mathematical Aptitude");
 
         // Adjust scores based on marks
         if (mathSection) {
             if (marks === 5) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  data_analysis: (prevScores.data_analysis || 0) + 25
+                  Data_Analysis: (prevScores.Data_Analysis || 0) + 25
                 }));
               } else if (marks === 4) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  software_development: (prevScores.software_development || 0) + 20,
-                  cyber_security: (prevScores.cyber_security || 0) + 20
+                  Software_Development: (prevScores.Software_Development || 0) + 20,
+                  Cyber_Security: (prevScores.Cyber_Security || 0) + 20
                 }));
               } else if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  mobile_development: (prevScores.mobile_development || 0) + 15,
-                  threeD_Design: (prevScores.threeD_Design || 0) + 15
+                  Mobile_: (prevScores.Mobile_ || 0) + 15,
+                  ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
                 }));
               } else if (marks <= 2) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  product_design: (prevScores.product_design || 0) + 10,
-                  product_management: (prevScores.product_management || 0) + 10
+                  Product_Design: (prevScores.Product_Design || 0) + 10,
+                  Product_Management: (prevScores.Product_Management || 0) + 10
+                }));
+            }
+        }
+    }
+
+    const calculateLogicScores = () => {
+        const logicSection = sections.find(section => section.title === "Logical Reasoning");
+
+        // Adjust scores based on marks
+        if (logicSection) {
+            if (marks === 5) {
+                setTrackScores(prevScores => ({
+                  ...prevScores,
+                  Data_Analysis: (prevScores.Data_Analysis || 0) + 25,
+                  Cyber_Security: (prevScores.Cyber_Security || 0) + 25
+                }));
+              } else if (marks === 4) {
+                setTrackScores(prevScores => ({
+                  ...prevScores,
+                  Software_Development: (prevScores.Software_Development || 0) + 20,
+                }));
+              } else if (marks === 3) {
+                setTrackScores(prevScores => ({
+                  ...prevScores,
+                  ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
+                }));
+              } else if (marks <= 2) {
+                setTrackScores(prevScores => ({
+                  ...prevScores,
+                  Product_Design: (prevScores.Product_Design || 0) + 10,
+                  Product_Management: (prevScores.Product_Management || 0) + 10,
+                  Mobile_Development: (prevScores.Mobile_Development || 0) + 10
                 }));
             }
         }
@@ -261,24 +304,43 @@ function Quiz() {
     }
 
     useEffect( () => {
-
         return () => {
             setSelectedAnswer('')
         }
     }, [currentSection, currentQuestion])
-     console.log(sections)  
+    //  console.log(sections)  
+
+    const formatTrackName = (trackName) => {
+        return trackName.replace(/_/g, ' ');
+    }
 
   return (
     <>
+        <Navbar />
 
         {finalScores === null ? (
             <div className="quiz-box">
-                <header>
-                    <h1>{sections[currentSection].title}</h1>
-                    <h3>Section {currentSection + 1} of {sections.length}</h3>
+                <header className="quiz-header">
+                    {(currentSection !== 0 || currentQuestion !== 0) && (
+                        <div className="back-button" onClick={() => setCurrentQuestion(currentQuestion - 1)}>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M13.8302 19.0003C13.6808 19.0008 13.5332 18.9678 13.3982 18.9038C13.2632 18.8398 13.1443 18.7463 13.0502 18.6303L8.22016 12.6303C8.07308 12.4513 7.99268 12.2269 7.99268 11.9953C7.99268 11.7637 8.07308 11.5392 8.22016 11.3603L13.2202 5.36028C13.3899 5.15606 13.6338 5.02763 13.8982 5.00325C14.1627 4.97888 14.4259 5.06054 14.6302 5.23028C14.8344 5.40001 14.9628 5.64393 14.9872 5.90835C15.0116 6.17278 14.9299 6.43606 14.7602 6.64028L10.2902 12.0003L14.6102 17.3603C14.7324 17.5071 14.8101 17.6858 14.834 17.8753C14.8579 18.0649 14.827 18.2573 14.7449 18.4299C14.6629 18.6024 14.5331 18.7478 14.371 18.8489C14.2089 18.95 14.0212 19.0025 13.8302 19.0003Z" fill="#424242"/>
+                            </svg>
+                            <p>Back</p>
+                        </div>
+                    )}
+                    <div className="header-title">
+                        <h1>{sections[currentSection].title}</h1>
+                        <h5 style={{fontSize:"16px", fontWeight:"500"}}>Section {currentSection + 1} of {sections.length}</h5>
+                        
+                    </div>
                 </header>
                 
                 <div className="question-answers">
+                    <div className="quiz-progress">
+                        <ProgressBar score={currentQuestion + 1} showPercentage={false} />
+                    </div>
+                    
                     <div id='question'>
                         {/* <h4><span>Question {currentQuestion + 1}</span>/{questions.length}</h4> */}
                         {/* <p>{questions[currentQuestion].question}</p> */}
@@ -299,7 +361,10 @@ function Quiz() {
                                             ? 
                                             <FaCircleCheck style={{ width: '44px', height: '44px', color:'#5F0C74' }} />
                                             : 
-                                            <FaRegCircle  style={{ width: '44px', height: '44px', color:'#5F0C74' }}/>
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="44" height="44" viewBox="0 0 45 44" fill="none">
+                                                <circle cx="22.0889" cy="22" r="21.5" fill="white" stroke="#5F0C74"/>
+                                            </svg>
+                                            // <FaRegCircle  style={{ width: '44px', height: '44px', color:'#5F0C74' }}/>
                                         }
                                     </div>
                                 
@@ -311,37 +376,73 @@ function Quiz() {
                                     
                                 </li>
                             )})}
+                            {errorMsg && <span style={{color:"red", fontSize:"14px", fontWeight:"400"}}>{errorMsg}</span>}
                         </ul>
+                        <svg className="quiz-element" xmlns="http://www.w3.org/2000/svg" width="438" height="412" viewBox="0 0 438 412" fill="none">
+                            <path fillRule="evenodd" clipRule="evenodd" d="M116.536 359.515C211.858 398.541 320.768 352.905 359.795 257.584C383.44 199.831 376.006 137.089 345.274 87.9245C370.596 89.8781 396.049 95.7544 420.818 105.895C548.595 158.209 609.769 304.202 557.455 431.978C505.141 559.755 359.149 620.93 231.372 568.616C134.454 528.936 75.8534 435.362 76.0295 336.72C88.2589 345.782 101.804 353.483 116.536 359.515ZM76.0295 336.72C9.13093 287.148 -18.3896 196.846 14.6051 116.257C53.6315 20.9354 162.542 -24.7008 257.863 14.3255C295.432 29.7067 325.282 55.9431 345.274 87.9245C239.962 79.8002 136.908 139.524 94.7347 242.532C82.1005 273.391 76.0856 305.313 76.0295 336.72Z" fill="#E3CFE8" fillOpacity="0.3"/>
+                        </svg>
                     </div>
+
+                    
                     
                     {/* <Button variant="primary" onClick={() => setCurrentQuestion(currentQuestion + 1)}>
                         Next
                     </Button> */}
-                    <Button variant="primary" onClick={handleNextQuestion}>
+                    
+                    <Button variant="primary" onClick={()=>{
+                        if (!selectedAnswer) {
+                            setErrorMsg("Please select an option")
+                            return
+                        }
+                        selectedAnswer && handleNextQuestion()
+                    }}>
                         {currentQuestion < sections[currentSection].questions.length - 1
                         ? "Next"
                         : currentSection < sections.length - 1
                         ? "Next Section"
                         : "Finish"}
                     </Button>
+                    
+                    
 
+                    {/* {currentSection === sections.length - 1 && currentQuestion === sections[currentSection].questions.length - 1
+                        ?
+                        <Button variant="primary" onClick={handleNextQuestion}>
+                            Finish
+                        </Button>
+                        :
+                        " "
+                    } */}
                     
                     
                 </div>
             </div>
         ) : (
-            <div id="answers">
-            <h2>Final Scores</h2>
-            <ul>
-                {Object.entries(finalScores).map(([track, score]) => (
-                <li className="scores-container" key={track}>{track}: {score}</li>
-                ))}
-            </ul>
+            <div style={{width:"80%", boxSizing:"border-box", margin:"auto"}}>
+                <h2>Final Scores</h2>
+                
+            {Object.entries(finalScores).map(([track, score]) => (
+            // <li className="scores-container" key={track}>{track}: {score}</li>
+            // <div>
+            //     {track}: <span><ProgressBar key={track} filled={score} /></span>
+            // </div>
+
+            <div className="final-scores" key={track}>
+                <div className="tracks-list">
+                    {formatTrackName(track)}:{' '}
+                </div>
+                <div className="score-bars">  
+                    <ProgressBar score={score} showPercentage={true}/> {/* Pass the score as a prop */}    
+                </div>
+            </div>
+            
+            ))}
+                
             </div>
             
         )}
       
-
+        
                 
                 
     

@@ -135,7 +135,8 @@ function Signup() {
                   <Button type="Submit" variant="primary">
                       Sign Up
                   </Button>
-                </form>                      
+                </form>
+                <p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service and Privacy Policy</span></p>                      
               </div>                
             </div>
           </div>      

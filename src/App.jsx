@@ -6,6 +6,7 @@ import Signup from "./components/pages/Authentication/Signup"
 import { UserAuthContextProvider } from "./context/UserAuthContext"
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Quiz from "./components/pages/Quiz/Quiz"
+import ProgressBar from "./components/layout/ProgressBar"
 
 
 function App() {

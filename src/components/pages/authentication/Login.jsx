@@ -102,7 +102,7 @@ function Login() {
                     </Button>
                 </form>
                 <div className="account-cta">
-                    <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup">Create Account</Link></span></p>
+                    <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup" className="custom-link">Create Account</Link></span></p>
                 </div>
                 
                     

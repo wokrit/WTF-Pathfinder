@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react"
 import './Quiz.css'
 import Button from "../../layout/Button";
-import { FaCircleCheck } from "react-icons/fa6";
-import { FaRegCircle } from "react-icons/fa";
 import data from "../../../data"
 import ProgressBar from "../../layout/ProgressBar";
 import Navbar from "../../layout/Navbar";
@@ -245,7 +243,7 @@ function Quiz() {
               } else if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Mobile_: (prevScores.Mobile_ || 0) + 15,
+                  Mobile_Development: (prevScores.Mobile_Development || 0) + 15,
                   ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
                 }));
               } else if (marks <= 2) {

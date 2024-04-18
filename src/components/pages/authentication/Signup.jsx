@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import userAuthContext from "../../../context/UserAuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../../layout/Button'
@@ -8,6 +8,7 @@ import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";
 import { PiEyeSlashLight } from "react-icons/pi";
 import { PiEyeLight } from "react-icons/pi";
+
 
 function Signup() {
     const [email, setEmail] = useState("");
@@ -20,6 +21,12 @@ function Signup() {
 
     const { signUp, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
+
+    // useEffect(() => {
+    //   if (window.innerWidth <= 720) {
+    //     setModal(!modal); // Hide modal for smaller screens initially
+    //   }
+    // }, []); 
 
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -50,7 +57,17 @@ function Signup() {
     const toggleModal = () => {
       setModal(!modal);
       navigate("/");
-    };
+    }
+    
+    // const toggleModal = () => {
+    //   if (window.innerWidth <= 720) {
+    //     // For smaller screens, toggle the modal state
+    //     setModal(!modal);
+    //   } else {
+    //     // For larger screens, navigate back to the home page
+    //     navigate("/");
+    //   }
+    // };
   
     if(modal) {
       document.body.classList.add('active-modal')
@@ -60,22 +77,21 @@ function Signup() {
 
   return (
     <>
-      {/* <Navbar handleLoginClick={toggleModal} /> */}
-      <Home />
+
       {modal && (
-        <div className="modal">
+        <div>
+          <Home />
+          <div className="modal">
           <div className="0verlay">
             <div className="modal-content">
               <div className="login-details">
                 <header>
                   <IoCloseOutline className="close-modal" onClick={toggleModal} />
                   <h1>Create Account</h1>
-                  <p>Before proceeding with the assessment, please create your Pathfinder account. Signing in allows us to securely
-                      save your assessment results and data, ensuring that you have access to personalized career recommendations and
-                      insights whenever you need them
+                  <p>Before proceeding with the assessment, please create your Pathfinder account.
                   </p>
                   <div className="account-cta">
-                    <p>Already have an account? <span><Link to="/login">Log In</Link></span></p>
+                    <p>Already have an account? <span><Link to="/login" className="custom-link">Log In</Link></span></p>
                   </div>
                 </header>
 
@@ -85,7 +101,7 @@ function Signup() {
                     Sign Up with Google
                   </div>  
                 </Button>
-                <h5 style={{ textAlign: 'center' }}>OR</h5>
+                <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
                 <form onSubmit={handleSubmit}>
                   <div className="user-detail">
                     <label>Email</label>
@@ -135,12 +151,17 @@ function Signup() {
                   <Button type="Submit" variant="primary">
                       Sign Up
                   </Button>
-                </form>                      
+                </form>
+                <p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service and Privacy Policy</span></p>                      
               </div>                
             </div>
           </div>      
         </div>
+        </div>
+        
       )}
+
+       
     </>
   )
 }

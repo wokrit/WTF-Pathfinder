@@ -23,7 +23,7 @@ function Login() {
         e.preventDefault();
         try {
           await logIn(email, password);
-          navigate("/quiz");
+          navigate("/instructions");
         } catch (error) {
           setError("Your username or password is incorrect");
         }
@@ -33,7 +33,7 @@ function Login() {
       e.preventDefault();
       try {
         await googleSignIn();
-        navigate("/quiz");
+        navigate("/instructions");
       } catch (error) {
         console.log(error.message);
       }
@@ -69,7 +69,7 @@ function Login() {
                     Continue with Google
                   </div>  
                 </Button>
-                <h5 style={{ textAlign: 'center' }}>OR</h5>
+                <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
                 <form onSubmit={handleSubmit}>
                     <div className="user-detail">
                         <label>Email</label>
@@ -102,7 +102,7 @@ function Login() {
                     </Button>
                 </form>
                 <div className="account-cta">
-                    <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup">Create Account</Link></span></p>
+                    <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup" className="custom-link">Create Account</Link></span></p>
                 </div>
                 
                     

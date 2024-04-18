@@ -1,0 +1,10 @@
+.fit {
+    background: #FEF8F4;
+    padding: var(--app-padding);
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}

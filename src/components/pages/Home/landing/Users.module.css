@@ -1,0 +1,70 @@
+.container {
+    padding: var(--app-padding);
+    background-image: url('/src/assets/user.png');
+    background-size: 100% 100%;
+    
+}
+
+.wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+}
+
+.heading {
+    color: #424242;
+    text-align: center;
+    font-family: Inter;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.bubble {
+    position: relative;
+    background-image: linear-gradient(105deg, rgba(208, 175, 216, 0.80) 10.4%, rgba(255, 255, 255, 0.20) 110.85%);
+    filter: drop-shadow(0px 15px 30px rgba(0, 0, 0, 0.25));
+    backdrop-filter: blur(5px);
+    width: 570px;
+    /* height: 120px; */
+    border-radius: 10px;
+    padding: 2rem;
+
+    color: #353535;
+    text-align: justify;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+        /* 22.4px */
+}
+
+.bubble:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 0;
+    z-index: 1;
+    border-style: solid;
+    border-width: 0 0 26px 38px;
+    border-color: transparent transparent #d0afd8cc transparent;
+    top: -26px;
+    left: 7%;
+    margin-left: -10px;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* position: absolute; */
+    left: 8rem;
+    /* bottom: -5rem; */
+}
+
+.pfp {
+    width: 50px;
+    height: 50px;
+}

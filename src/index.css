@@ -1,7 +1,14 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  /* line-height: 1.5;
+  font-weight: 400; */
+  --app-padding: 0 50px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -31,20 +38,13 @@
 }
 
 .navbar {
-  margin: auto;
-  width:100%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  gap: 147.5px;
- 
+  padding: var(--app-padding);
+  margin-bottom: 0.5rem;
 }
-/* .navbar ul {
-  display: flex;
-  flex-direction: row;
-  gap: 200px;
-  align-items: center;
-} */
+
 .navbar ul li {
   list-style-type: none;
 }

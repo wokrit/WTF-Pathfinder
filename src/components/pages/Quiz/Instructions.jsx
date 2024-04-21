@@ -76,15 +76,12 @@ function Instructions() {
                     </div>
                 </div>
                 <div className='instructions-CTA'>
-                <Button variant="primary" onClick={handleClick} disabled={isLoading}>
-                    {isLoading ? <Spinner /> : "Start Test"}
-                </Button>
+                    <Button variant="primary" onClick={handleClick} disabled={isLoading}>
+                        {isLoading ? <Spinner /> : "Start Test"}
+                    </Button>
                 </div>
             </div>
-        </div>
-        {/* <Quiz isLoading={isLoading} setIsLoading={setIsLoading} /> */}
-        
-      
+        </div>  
     </>
   )
 }

@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <>
         <nav className="navbar">
-            <img className="wtf-logo" alt="WTF Logo" src="./src/assets/WT-LOGO-1 1.png" onClick={() => navigate("/")}  />
+            <img className="wtf-logo" alt="WTF Logo" src="src\assets\WT-LOGO-1 1.png" onClick={() => navigate("/")}  />
             <ul className="nav-links">
                 <li>About</li>
                 <li>Programs</li>

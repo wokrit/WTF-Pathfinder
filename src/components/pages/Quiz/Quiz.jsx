@@ -309,13 +309,13 @@ function Quiz() {
                 {highestScoringTrack && (
                     <div className="recommendation">
                         <div className="recommendation-track">
-                            <p>Your recommended track is </p>
+                            <p>Your recommended track is: </p>
                             <h1 style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</h1>
                             <img className="confetti1" alt="confetti" src="..\src\assets\Recomendation confetti.png"></img>
                             <img className="confetti2" alt="confetti" src="..\src\assets\Recommendation confetti 2.png"></img>
                         </div>
                         <div className="recommendation-message">
-                            <div>Your Carrer match is: <span style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</span> </div>
+                            <div>Your Career match is: <span style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</span> </div>
                             <p>{renderTrackMessage(highestScoringTrack)}</p>
                         </div>
                     </div>

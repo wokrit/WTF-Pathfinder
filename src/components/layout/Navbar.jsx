@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Button from "./Button"
-import Signup from "../pages/Authentication/Signup"
+import Signup from "../pages/authentication/Signup"
 import userAuthContext from "../../context/UserAuthContext"
 
 

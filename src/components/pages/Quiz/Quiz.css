@@ -23,7 +23,7 @@ body {
   width:100%;
   justify-content: center;
   align-items: center;
-  line-height: 0%;
+  gap:8px;
 }
 .back-button{
   display:flex;
@@ -309,11 +309,22 @@ footer .footer_copyright {
   /* list-style-type: none; */
 
 }
+.result{
+  width:100%;
+  padding: 40px;
+  align-items: center;
+  border-radius: 8px;
+  border: 0.5px solid #534A43;
+  display: flex;
+  flex-direction: column;
+  gap:24px;
+  margin-bottom: 80px;
+}
 .final-scores{
   display: flex;
-  flex-direction: row;
-  /* gap:24px; */
-  margin-bottom: 24px;
+  flex-direction: column;
+  gap:4px;
+  
 }
 .tracks-list{
   width:250px;
@@ -340,6 +351,7 @@ footer .footer_copyright {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  /* overflow: auto; */
 
 }
 
@@ -403,3 +415,65 @@ footer .footer_copyright {
       transform: rotate(360deg);
   }
   } 
+
+  /*====================
+      FINAL RESULTS
+======================*/
+.recommendation {
+  display: flex;
+  flex-direction: row;
+  /* display: inline-flex; */
+  align-items: flex-start;
+  gap: 58px;
+  width:100%;
+  margin: 48px 0;
+}
+.recommendation-track {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 16px;
+  background: #FEF8F4;
+  box-shadow: 0px 1px 2px 0px rgba(77, 77, 77, 0.30), 0px 2px 6px 2px rgba(77, 77, 77, 0.15);
+  padding: 100px 48px;
+  flex-grow: 1;
+  width:60%;
+  position: relative;
+  text-align: center;
+}
+.recommendation-message {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
+  gap: 16px;
+  border-radius: 16px;
+  background: #FEF8F4;
+  box-shadow: 0px 1px 2px 0px rgba(77, 77, 77, 0.30), 0px 2px 6px 2px rgba(77, 77, 77, 0.15);
+  padding: 76px 32px;
+  flex-grow: 2;
+  text-align: left;
+  width:100%;
+}
+.recommendation-message div {
+  font-size: 20px;
+  font-weight: 600;
+}
+.confetti1 {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  position: absolute;
+  bottom:0;
+  left:0;
+}
+.confetti2 {
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}

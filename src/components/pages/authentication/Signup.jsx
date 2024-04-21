@@ -17,7 +17,7 @@ function Signup() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [modal, setModal] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
-    // const [errorMessage, setErrorMessage] = useState("");
+    const [isChecked, setIsChecked] = useState(false);
 
     const { signUp, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
@@ -30,7 +30,12 @@ function Signup() {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      // setError("");
+      if (!isChecked) { // Check if checkbox is not checked
+        setError("Please accept the terms and privacy policies."); // Show error message
+        return; // Prevent further execution
+      }
+      setError(""); // Clear error message
+      
       if (password === confirmPassword) {
         try {
           await signUp(email, password);
@@ -148,11 +153,19 @@ function Signup() {
                     <div className="error-message">{ "" !== error && error }</div>
                   </div>
 
+                  <div className="terms">
+                    <input 
+                      type="checkbox" 
+                      checked={isChecked} 
+                      onChange={() => setIsChecked(!isChecked)} // Toggle isChecked state
+                    />
+                    <label htmlFor="terms"><p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span></p></label>
+                  </div>
+
                   <Button type="Submit" variant="primary">
                       Sign Up
                   </Button>
-                </form>
-                <p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service and Privacy Policy</span></p>                      
+                </form>                      
               </div>                
             </div>
           </div>      

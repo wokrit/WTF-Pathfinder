@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useEffect, useContext } from "react";
 import userAuthContext from "../../../context/UserAuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import Button from '../../layout/Button'
@@ -15,9 +15,12 @@ function Login() {
     const [password, setPassword] = useState("");
     const [modal, setModal] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
-
-    const { logIn, googleSignIn } = useContext(userAuthContext);
+    const { logIn, googleSignIn, windowWidth, setWindowWidth} = useContext(userAuthContext);
     let navigate = useNavigate();
+
+    useEffect(() => {
+      setWindowWidth(window.innerWidth);
+    }, [setWindowWidth]);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -52,68 +55,114 @@ function Login() {
 
   return (
     <>
-      <Home />
-      {modal && (
-        <div className="modal">
-          <div className="0verlay">
-            <div className="modal-content">
-              <div className="login-details">
-                <header>
-                  <IoCloseOutline className="close-modal" onClick={toggleModal} />
-                  <h1>Welcome Back</h1>
-                </header>
+      {windowWidth >= 720 ? (
+        <div>
+          <Home />
+          <div className="modal">
+            <div className="0verlay">
+              <div className="modal-content">
+                <div className="login-details">
+                  <header>
+                    <IoCloseOutline className="close-modal" onClick={toggleModal} />
+                    <h1>Welcome Back</h1>
+                  </header>
 
-                <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
-                  <div className="googlebutton">
-                    <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
-                    Continue with Google
-                  </div>  
-                </Button>
-                <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
-                <form onSubmit={handleSubmit}>
-                    <div className="user-detail">
-                        <label>Email</label>
-                        <input 
-                            className="input-field" 
-                            type="email" 
-                            placeholder="Enter your email"
-                            onChange={(e) => setEmail(e.target.value)}
-                        >
-                        </input>
-                    </div>
-                    <div className="user-detail">
-                        <label>Password</label>
-                        <input 
-                            className="input-field" 
-                            type={showPassword ? "text" : "password"}
-                            placeholder="Password"
-                            onChange={(e) => setPassword(e.target.value)}
-                        />
-                        {showPassword ? (
-                        <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
-                      ) : (
-                        <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
-                      )}
-                      <div className="error-message">{ "" !== error && error }</div>
-                    </div>
-                  
-                    <Button type="Submit" variant="primary">
-                      Login
-                    </Button>
-                </form>
-                <div className="account-cta">
-                    <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup" className="custom-link">Create Account</Link></span></p>
-                </div>
-                
+                  <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
+                    <div className="googlebutton">
+                      <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                      Continue with Google
+                    </div>  
+                  </Button>
+                  <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
+                  <form onSubmit={handleSubmit}>
+                      <div className="user-detail">
+                          <label>Email</label>
+                          <input 
+                              className="input-field" 
+                              type="email" 
+                              placeholder="Enter your email"
+                              onChange={(e) => setEmail(e.target.value)}
+                          >
+                          </input>
+                      </div>
+                      <div className="user-detail">
+                          <label>Password</label>
+                          <input 
+                              className="input-field" 
+                              type={showPassword ? "text" : "password"}
+                              placeholder="Password"
+                              onChange={(e) => setPassword(e.target.value)}
+                          />
+                          {showPassword ? (
+                          <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                        ) : (
+                          <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                        )}
+                        <div className="error-message">{ "" !== error && error }</div>
+                      </div>
                     
-                      
-                      
+                      <Button type="Submit" variant="primary">
+                        Login
+                      </Button>
+                  </form>
+                  <div className="account-cta">
+                      <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup" className="custom-link">Create Account</Link></span></p>
+                  </div>
+                </div>
               </div>
-                
             </div>
           </div>
-        
         </div>
+        
+      ):(
+          <div className="login-details">
+                    <header>
+                      <IoCloseOutline className="close-modal" onClick={toggleModal} />
+                      <h1>Welcome Back</h1>
+                    </header>
+
+                    <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
+                      <div className="googlebutton">
+                        <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                        Continue with Google
+                      </div>  
+                    </Button>
+                    <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
+                    <form onSubmit={handleSubmit}>
+                        <div className="user-detail">
+                            <label>Email</label>
+                            <input 
+                                className="input-field" 
+                                type="email" 
+                                placeholder="Enter your email"
+                                onChange={(e) => setEmail(e.target.value)}
+                            >
+                            </input>
+                        </div>
+                        <div className="user-detail">
+                            <label>Password</label>
+                            <input 
+                                className="input-field" 
+                                type={showPassword ? "text" : "password"}
+                                placeholder="Password"
+                                onChange={(e) => setPassword(e.target.value)}
+                            />
+                            {showPassword ? (
+                            <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                          ) : (
+                            <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                          )}
+                          <div className="error-message">{ "" !== error && error }</div>
+                        </div>
+                      
+                        <Button type="Submit" variant="primary">
+                          Login
+                        </Button>
+                    </form>
+                    <div className="account-cta">
+                        <p style={{ textAlign: 'center' }}>New to Pathfinder? <span><Link to="/signup" className="custom-link">Create Account</Link></span></p>
+                    </div>
+                  </div>
       )}
    
     </>

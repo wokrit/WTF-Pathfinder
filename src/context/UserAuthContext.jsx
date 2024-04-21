@@ -14,6 +14,7 @@ const userAuthContext = createContext();
 
 export function UserAuthContextProvider({ children }) {
     const[user, setUser] = useState({})
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
     
     
 
@@ -37,8 +38,15 @@ export function UserAuthContextProvider({ children }) {
           };
     }, [])
 
+    useEffect(() => {
+      const handleResize = () => setWindowWidth(window.innerWidth);
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+
   return (
-    <userAuthContext.Provider value={{ user, logIn, signUp, logOut, googleSignIn }}>
+    <userAuthContext.Provider value={{ user, logIn, signUp, logOut, googleSignIn, windowWidth, setWindowWidth }}>
         {children}  
     </userAuthContext.Provider>
   

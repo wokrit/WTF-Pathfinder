@@ -18,16 +18,14 @@ function Signup() {
     const [modal, setModal] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
     const [isChecked, setIsChecked] = useState(false);
-
-    const { signUp, googleSignIn } = useContext(userAuthContext);
+    const { signUp, windowWidth, setWindowWidth, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
 
-    // useEffect(() => {
-    //   if (window.innerWidth <= 720) {
-    //     setModal(!modal); // Hide modal for smaller screens initially
-    //   }
-    // }, []); 
+    useEffect(() => {
+      setWindowWidth(window.innerWidth);
+    }, [setWindowWidth]);
 
+    
     const handleSubmit = async (e) => {
       e.preventDefault();
       if (!isChecked) { // Check if checkbox is not checked
@@ -63,16 +61,6 @@ function Signup() {
       setModal(!modal);
       navigate("/");
     }
-    
-    // const toggleModal = () => {
-    //   if (window.innerWidth <= 720) {
-    //     // For smaller screens, toggle the modal state
-    //     setModal(!modal);
-    //   } else {
-    //     // For larger screens, navigate back to the home page
-    //     navigate("/");
-    //   }
-    // };
   
     if(modal) {
       document.body.classList.add('active-modal')
@@ -83,7 +71,7 @@ function Signup() {
   return (
     <>
 
-      {modal && (
+      {windowWidth >= 720 ? (
         <div>
           <Home />
           <div className="modal">
@@ -172,6 +160,85 @@ function Signup() {
         </div>
         </div>
         
+      ):(
+          <div className="login-details">
+            <header>
+              <IoCloseOutline className="close-modal" onClick={toggleModal} />
+              <h1>Create Account</h1>
+              <p>Before proceeding with the assessment, please create your Pathfinder account.
+              </p>
+              <div className="account-cta">
+                <p>Already have an account? <span><Link to="/login" className="custom-link">Log In</Link></span></p>
+              </div>
+            </header>
+
+            <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
+              <div className="googlebutton">
+                <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                Sign Up with Google
+              </div>  
+            </Button>
+            <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
+            <form onSubmit={handleSubmit}>
+              <div className="user-detail">
+                <label>Email</label>
+                <input 
+                  className="input-field" 
+                  type="email" 
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                >
+                </input>
+              </div>
+
+              <div className="user-detail">
+                <label>Password</label>
+                <input 
+                  className="input-field" 
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                {showPassword ? (
+                    <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                  ) : (
+                    <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                  )}
+              </div>
+    
+              <div className="user-detail">
+                <label>Confirm Password</label>
+                <input 
+                  className="input-field" 
+                  type={showPassword ? "text" : "password"}
+                  placeholder="Confirm Password"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                {showPassword ? (
+                    <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
+                  ) : (
+                    <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
+                  )}
+                <div className="error-message">{ "" !== error && error }</div>
+              </div>
+
+              <div className="terms">
+                <input 
+                  type="checkbox" 
+                  checked={isChecked} 
+                  onChange={() => setIsChecked(!isChecked)} // Toggle isChecked state
+                />
+                <label htmlFor="terms"><p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span></p></label>
+              </div>
+
+              <Button type="Submit" variant="primary">
+                  Sign Up
+              </Button>
+            </form>                      
+          </div>                
       )}
 
        

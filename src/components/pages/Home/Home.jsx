@@ -1,6 +1,6 @@
 import Navbar from "../../layout/Navbar"
 import Button from "../../layout/Button"
-import "../Authentication/Auth.css";
+import "../authentication/Auth.css";
 import Hero from "./landing/Hero";
 import Details from "./landing/Details";
 import Programs from "./landing/Programs"

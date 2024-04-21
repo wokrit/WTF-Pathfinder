@@ -25,7 +25,7 @@ export default function Hero() {
           </Button>
         </div>
         {/* <img src=".\src\assets\Hero Slide Accordion.png"></img> */}
-        <img src="\src\assets\Hero Slide Accordion.png" alt="Hero Slide Accordion" />
+        <img src="\images\Hero Slide Accordion.png" alt="Hero Slide Accordion" />
       </div>
       
       <div className={hero.metric}>

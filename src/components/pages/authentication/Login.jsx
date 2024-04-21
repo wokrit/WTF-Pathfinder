@@ -69,7 +69,7 @@ function Login() {
 
                   <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
                     <div className="googlebutton">
-                      <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                      <img src="\images\flat-color-icons_google.png" alt="google icon"/>
                       Continue with Google
                     </div>  
                   </Button>

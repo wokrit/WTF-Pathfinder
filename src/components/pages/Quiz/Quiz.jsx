@@ -311,8 +311,8 @@ function Quiz() {
                             <div className="recommendation-track">
                                 <p>Your recommended track is: </p>
                                 <h1 style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</h1>
-                                <img className="confetti1" alt="confetti" src="..\src\assets\Recomendation confetti.png"></img>
-                                <img className="confetti2" alt="confetti" src="..\src\assets\Recommendation confetti 2.png"></img>
+                                <img className="confetti1" alt="confetti" src="\images\Recomendation confetti.png"></img>
+                                <img className="confetti2" alt="confetti" src="\images\Recommendation confetti 2.png"></img>
                             </div>
                             <div className="recommendation-message">
                                 <div className="career-match">Your Career match is: <span style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</span> </div>

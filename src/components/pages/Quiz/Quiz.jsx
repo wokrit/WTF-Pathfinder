@@ -210,8 +210,7 @@ function Quiz() {
                     )}
                     <div className="header-title">
                         <h1>{sections[currentSection].title}</h1>
-                        <h5 style={{fontSize:"16px", fontWeight:"500"}}>Section {currentSection + 1} of {sections.length}</h5>
-                        
+                        <h5 style={{fontSize:"16px", fontWeight:"500"}}>Section {currentSection + 1} of {sections.length}</h5>  
                     </div>
                 </header>
                 
@@ -307,16 +306,18 @@ function Quiz() {
                 
                 {/* Render the recommended track and message */} 
                 {highestScoringTrack && (
-                    <div className="recommendation">
-                        <div className="recommendation-track">
-                            <p>Your recommended track is: </p>
-                            <h1 style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</h1>
-                            <img className="confetti1" alt="confetti" src="..\src\assets\Recomendation confetti.png"></img>
-                            <img className="confetti2" alt="confetti" src="..\src\assets\Recommendation confetti 2.png"></img>
-                        </div>
-                        <div className="recommendation-message">
-                            <div>Your Career match is: <span style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</span> </div>
-                            <p>{renderTrackMessage(highestScoringTrack)}</p>
+                    <div className="recommendations">
+                        <div className="recommendation">
+                            <div className="recommendation-track">
+                                <p>Your recommended track is: </p>
+                                <h1 style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</h1>
+                                <img className="confetti1" alt="confetti" src="..\src\assets\Recomendation confetti.png"></img>
+                                <img className="confetti2" alt="confetti" src="..\src\assets\Recommendation confetti 2.png"></img>
+                            </div>
+                            <div className="recommendation-message">
+                                <div className="career-match">Your Career match is: <span style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</span> </div>
+                                <p>{renderTrackMessage(highestScoringTrack)}</p>
+                            </div>
                         </div>
                     </div>
                 )}
@@ -342,13 +343,6 @@ function Quiz() {
                     
                     ))}
                 </div>
-
-                
-                
-
-               
-            
-                
             </div>
 
 

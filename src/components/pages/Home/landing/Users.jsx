@@ -31,7 +31,7 @@ export default function Users() {
 
             <article>
                 <div className={users.profile}>
-                    <img src="..\src\assets\eleanor.png" className={users.pfp} />
+                    <img src="\images\eleanor.png" className={users.pfp} />
                     <span>Eleanor Pena</span>
                 </div>
 
@@ -42,7 +42,7 @@ export default function Users() {
 
             <article>
                 <div className={users.profile}>
-                    <img src="..\src\assets\eleanor.png" className={users.pfp} />
+                    <img src="\images\eleanor.png" className={users.pfp} />
                     <span>Eleanor Pena</span>
                 </div>
 

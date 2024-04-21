@@ -1,6 +1,6 @@
 .container {
     padding: var(--app-padding);
-    background-image: url('/src/assets/user.png');
+    background-image: url('/images/user.png');
     background-size: 100% 100%;
     
 }

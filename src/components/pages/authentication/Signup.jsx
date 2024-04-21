@@ -17,6 +17,8 @@ function Signup() {
     const [confirmPassword, setConfirmPassword] = useState("");
     const [modal, setModal] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
+    const [isPasswordFocused, setIsPasswordFocused] = useState(false); 
+    const [isPasswordValid, setIsPasswordValid] = useState(false); 
     const [isChecked, setIsChecked] = useState(false);
     const { signUp, windowWidth, setWindowWidth, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
@@ -25,6 +27,35 @@ function Signup() {
       setWindowWidth(window.innerWidth);
     }, [setWindowWidth]);
 
+    const handlePasswordChange = (e) => {
+      const newPassword = e.target.value;
+      setPassword(newPassword);
+  }
+  
+  const validatePassword = () => {
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+      const isValid = passwordRegex.test(password);
+      setIsPasswordValid(isValid); // Update password validity state
+      if (!isValid) {
+          setError("Password does not follow the password requirements.");
+      } else {
+          setError(""); // Clear error message
+      }
+  }
+
+  const getPasswordRequirements = () => {
+    return (
+      <div className="password-requirements">
+        <p>Password must:</p>
+        <ul>
+          <li>Be at least 6 characters long</li>
+          <li>Contain at least one uppercase letter</li>
+          <li>Contain at least one lowercase letter</li>
+          <li>Contain at least one number</li>
+        </ul>
+      </div>
+    );
+  }
     
     const handleSubmit = async (e) => {
       e.preventDefault();
@@ -61,6 +92,11 @@ function Signup() {
       setModal(!modal);
       navigate("/");
     }
+
+    const handlePasswordBlur = () => {
+      setIsPasswordFocused(false); // Reset isPasswordFocused state when the password field loses focus
+      validatePassword(password); // Validate password when the password field loses focus
+    };
   
     if(modal) {
       document.body.classList.add('active-modal')
@@ -90,7 +126,7 @@ function Signup() {
 
                 <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
                   <div className="googlebutton">
-                    <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                    <img src="\images\flat-color-icons_google.png" alt="google icon"/>
                     Sign Up with Google
                   </div>  
                 </Button>
@@ -115,7 +151,10 @@ function Signup() {
                       type={showPassword ? "text" : "password"}
                       placeholder="Password"
                       value={password}
-                      onChange={(e) => setPassword(e.target.value)}
+                      // onChange={(e) => setPassword(e.target.value)}
+                      onChange={handlePasswordChange}
+                      onFocus={() => setIsPasswordFocused(true)}
+                      onBlur={handlePasswordBlur} 
                     />
                     {showPassword ? (
                         <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
@@ -123,6 +162,7 @@ function Signup() {
                         <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
                       )}
                   </div>
+                  {isPasswordFocused && !isPasswordValid && getPasswordRequirements()} {/* Display requirements only when password is focused */}
         
                   <div className="user-detail">
                     <label>Confirm Password</label>
@@ -138,9 +178,9 @@ function Signup() {
                       ) : (
                         <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
                       )}
-                    <div className="error-message">{ "" !== error && error }</div>
+                    
                   </div>
-
+                  <div className="error-message">{ "" !== error && error }</div>
                   <div className="terms">
                     <input 
                       type="checkbox" 
@@ -199,7 +239,10 @@ function Signup() {
                   type={showPassword ? "text" : "password"}
                   placeholder="Password"
                   value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  // onChange={(e) => setPassword(e.target.value)}
+                  onChange={handlePasswordChange}
+                  onFocus={() => setIsPasswordFocused(true)}
+                  onBlur={handlePasswordBlur} 
                 />
                 {showPassword ? (
                     <PiEyeSlashLight className="icon" onClick={() => setShowPassword(false)} />
@@ -207,6 +250,7 @@ function Signup() {
                     <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
                   )}
               </div>
+              {isPasswordFocused && !isPasswordValid && getPasswordRequirements()}
     
               <div className="user-detail">
                 <label>Confirm Password</label>
@@ -222,8 +266,8 @@ function Signup() {
                   ) : (
                     <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
                   )}
-                <div className="error-message">{ "" !== error && error }</div>
               </div>
+              <div className="error-message">{ "" !== error && error }</div>
 
               <div className="terms">
                 <input 

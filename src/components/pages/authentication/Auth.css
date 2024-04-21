@@ -51,7 +51,7 @@ header h1 {
 }
 
 .active-modal{
-    overflow: auto;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 720px) {
@@ -158,7 +158,7 @@ p {
     position: absolute;
     top: 50%;
     bottom: 50%;
-    /* transform: translateY(-50%); */
+    /* transform: translateY(-50%, -50%); */
     right: 16px;
     cursor: pointer;
 }
@@ -178,4 +178,19 @@ p {
 }
 .terms input:checked {
     background-color: #89369E;
+}
+.password-requirements{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.password-requirements ul li{
+    font-size: 12px;
+    /* font-weight: 600; */
+    color:#89369E;
+    list-style-type: none;
+}
+.password-requirements p{
+    font-size: 12px;
+    font-weight: 500;
 }

@@ -24,6 +24,7 @@ export default function Hero() {
             Take Assesment
           </Button>
         </div>
+
         <img src="..\src\assets\Hero Slide Accordion.png" className={hero.pic}></img>
       </div>
       

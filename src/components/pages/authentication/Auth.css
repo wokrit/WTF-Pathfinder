@@ -13,7 +13,6 @@
     bottom: 0;
     position: fixed;
     background: rgba(49,49,49,0.8);
-    /* overflow-y: auto; */
 }
 
 .overlay {
@@ -51,7 +50,7 @@ header h1 {
 }
 
 .active-modal{
-    overflow: hidden;
+    overflow: auto;
 }
 
 @media screen and (max-width: 720px) {

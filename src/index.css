@@ -58,7 +58,10 @@
   justify-content: space-between;
   align-items: center;
   padding: var(--app-padding);
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
   margin-bottom: 0.5rem;
+  background-color: #fefefe;
 
 }
 
@@ -99,13 +102,15 @@
 .progressbar{
 	position: relative;
 	overflow: hidden;
-  width: 800px;
+  width: 80%;
   height: 20px;
   border-radius: 16px;
   border: 2px solid #E3CFE8;
+  background-color: #fff;
   /* display: flex; */
   /* flex-direction: row; */
 }
+
 
 .progressPercent{
 	font-weight: 600;
@@ -129,27 +134,75 @@
     }
  
   .progressbar {
-    width:100px;
+    width:100%;
   }
 
     .btn {
       width: 100%;
     }
 
-    .nav-buttons {
-      display: none;
-    }
+  
+}
 
-  .nav-menu {
+
+
+
+.hamburger-icon {
+  display: none;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80%;
+  /* height:100%; */
+  z-index: 1000;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+}
+
+.mobile-nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.mobile-nav-links li {
+  margin-bottom: 0.5rem;
+}
+
+
+@media (max-width: 720px) {
+  .wtf-logo {
+    width: 32px;
+    height: 40px; 
+  }
+  .nav-links {
+    display: none; /* Hide the nav links */
+  }
+
+  .hamburger-icon {
+    display: block; /* Show the hamburger icon */
+  }
+
+  .mobile-menu {
+    display: none; /* Hide the mobile menu initially */
+  }
+
+  .mobile-menu.show {
+    display: flex; /* Show the mobile menu when the hamburger is clicked */
+    flex-direction: column;
+    justify-content: space-between ;
+    gap: 24px;
+
+  }
+  .nav-buttons {
     display: none;
   }
 
-  .nav-menu.toggle {
-    display: block;
-    flex-direction: column;
-  }
-    
-  .jam-menu {
-    display: block;
-  }
 }

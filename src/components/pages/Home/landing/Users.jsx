@@ -31,8 +31,10 @@ export default function Users() {
 
             <article>
                 <div className={users.profile}>
+
                     <img src="..\src\assets\ronald.png" className={users.pfp} />
                     <span>Ronald Richard</span>
+
                 </div>
 
                 <p className={users.bubble}>
@@ -41,8 +43,10 @@ export default function Users() {
 
             <article>
                 <div className={users.profile}>
+
                     <img src="..\src\assets\dianne.png" className={users.pfp} />
                     <span>Dianne Russell</span>
+
                 </div>
 
                 <p className={users.bubble}>

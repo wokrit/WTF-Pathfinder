@@ -267,17 +267,17 @@ const data = {
             title: "Personality Traits",
             questions: [
                 {
-                    question: "I am an introvert. Do you agree?",
+                    question: "I am very comfortable with unconventional ideas or ways of thinking?",
                     answers: [
                       {
                           answerID : 'A', 
-                          answerText: 'Stongly Disagree', 
-                          scores: { software_development: 10, mobile_development: 10 }
+                          answerText: 'Stongly Agree', 
+                          scores: { Software_Development: 10, Mobile_Development: 10 }
                       },
                       {
                           answerID : 'B', 
-                          answerText: 'Disagree', 
-                          scores: { Product_Management: 10, Product_Design: 10, ThreeD_Animation: 10}
+                          answerText: 'Agree', 
+                          scores: { Mobile_Development: 10, Product_Design: 10, ThreeD_Animation: 10}
                       },
                       {
                           answerID : 'C', 
@@ -286,12 +286,12 @@ const data = {
                       },
                       {
                           answerID : 'D', 
-                          answerText: 'Agree', 
+                          answerText: 'Disagree', 
                           scores: { Cyber_Security: 10, Data_Analysis: 10, Blockchain_Development: 10 }
                       },
                       {
                           answerID : 'E', 
-                          answerText: 'Strongly Agree', 
+                          answerText: 'Strongly Disagree', 
                           scores: { Cyber_Security: 10, Data_Analysis: 10, Blockchain_Development: 10 }
                       }
                     ],

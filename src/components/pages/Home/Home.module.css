@@ -8,3 +8,11 @@
     align-items: center;
     gap: 1rem;
 }
+
+.fit p {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    color: #424242;
+}

@@ -66,3 +66,15 @@
     font-weight: 700;
     line-height: 36px;
 }
+
+@media (max-width:720px) {
+    .article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .girl {
+        width: 300px;
+        height: 350;
+    }
+}

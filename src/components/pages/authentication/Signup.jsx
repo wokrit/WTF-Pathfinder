@@ -33,7 +33,7 @@ function Signup() {
   }
   
   const validatePassword = () => {
-      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/;
+      const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
       const isValid = passwordRegex.test(password);
       setIsPasswordValid(isValid); // Update password validity state
       if (!isValid) {
@@ -48,7 +48,7 @@ function Signup() {
       <div className="password-requirements">
         <p>Password must:</p>
         <ul>
-          <li>Be at least 6 characters long</li>
+          <li>Be at least  characters long</li>
           <li>Contain at least one uppercase letter</li>
           <li>Contain at least one lowercase letter</li>
           <li>Contain at least one number</li>

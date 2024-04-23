@@ -36,7 +36,7 @@ function Navbar() {
           document.removeEventListener("mousedown", handleClickOutside);
         };
       }, []);
-
+  
   return (
     <>
         <nav className="navbar">
@@ -55,6 +55,7 @@ function Navbar() {
                     Take Assesment
                 </Button>
             </div>
+
             <div className="hamburger-icon" onClick={toggleMobileMenu}>
                 <RxHamburgerMenu style={{width:"24px", height:"24px"}}/>
             </div>

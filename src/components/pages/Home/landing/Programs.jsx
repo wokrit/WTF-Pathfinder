@@ -13,9 +13,13 @@ export default function Programs() {
                 <p className={programs.text}>
                     Success in the tech industry is about continuous growth and development. Women Techsters Fellowship goes beyond initial career recommendations provided through Women Techsters Pathfinder but also provide ongoing programs to help women thrive in their chosen path. From booth camps to masterclasses, we empower you to stay ahead in a rapidly evolving tech landscape and achieve long-term career success.
                 </p>
+
+                <p className={programs.textmobile}>
+                    Success in the tech industry is about continuous growth and development. Women Techsters Fellowship goes beyond initial career recommendations provided through Women Techsters Pathfinder.
+                </p>
             </div>
 
-            <Button type="button" variant="secondary">
+            <Button type="button" variant="secondary" onClick={"https://www.womentechsters.org/programs"}>
                 EXPLORE PROGRAMS
           </Button>
         </div>

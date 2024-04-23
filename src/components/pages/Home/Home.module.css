@@ -8,3 +8,20 @@
     align-items: center;
     gap: 1rem;
 }
+
+.fit p {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 36px;
+    text-align: center;
+    color: #424242;
+}
+
+@media(max-width:768px) {
+    .fit p {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+    }
+}

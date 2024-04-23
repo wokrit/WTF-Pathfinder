@@ -3,6 +3,8 @@
     line-height: 1.5;
     font-weight: 400;
   --app-padding: 0 50px;
+  --app-margin: 0 50px;
+  overflow: auto;
 }
 
 * {
@@ -78,11 +80,25 @@
   font-size: 16px;
   font-weight: 600;
 }
-.nav-buttons {
+/* .nav-buttons {
   display: flex;
   align-items: flex-start;
   gap: 24px;
+} */
+
+.nav-menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 70%;
 }
+
+.jam-menu {
+  width: 24px;
+  height: 24px;
+  display: none;
+}
+
 .progressbar{
 	position: relative;
 	overflow: hidden;
@@ -108,15 +124,23 @@
   
 }
 
-@media screen and (max-width: 720px) {
+
+@media (max-width: 720px) {
+:root {
+    --app-padding: 0 30px;
+    --app-margin: 0 30px;
+    font-size: 10px;
+    overflow: auto;
+    }
+ 
   .progressbar {
     width:100%;
   }
-}
-@media screen and (max-width: 720px) {
-  .btn {
-    width:100%;
-  }
+
+    .btn {
+      width: 100%;
+    }
+
   
 }
 

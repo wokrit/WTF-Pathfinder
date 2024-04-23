@@ -41,3 +41,37 @@
     font-weight: 400;
     line-height: 36px;
 }
+
+.textmobile {
+    display: none;
+}
+
+@media (max-width:768px) {
+    .container {
+        padding-top: 12rem;
+    }
+
+    .feature h3 {
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 24.2px;
+        text-align: center;
+    }
+
+    .textmobile {
+        display: block;
+        font-family: Inter;
+            font-size: 12px;
+            font-weight: 400;
+            line-height: 18px;
+            text-align: center;
+    }
+
+    .text {
+        display: none;
+    }
+
+    .box {
+        padding: 11px 12px 12px 13px;
+    }
+}

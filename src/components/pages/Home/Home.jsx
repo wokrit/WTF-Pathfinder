@@ -12,12 +12,14 @@ import React, { useEffect, useState } from 'react';
 import CookieConsent from './CookieConsent';
 import Cookies from 'js-cookie';
 
+
 function Home() {
   const navigate = useNavigate()
 
-    const handleSignup = () => {
-        navigate("/Signup");
-    }
+  const handleSignup = () => {
+      navigate("/Signup");
+  }
+
 
   const [showCookieConsent, setShowCookieConsent] = useState(true); 
 

@@ -3,8 +3,9 @@ import Quiz from "../pages/Quiz/Quiz";
 
 
 
-function Progressbar({score, showPercentage, backgroundImage}) {
+function Progressbar({score, showPercentage, backgroundImage }) {
     // const [filled, setFilled] = useState(0);
+
 
   return (
 	    <>

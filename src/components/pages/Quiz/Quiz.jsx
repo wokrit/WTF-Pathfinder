@@ -6,6 +6,8 @@ import ProgressBar from "../../layout/ProgressBar";
 import Navbar from "../../layout/Navbar";
 import renderTrackMessage from "../../layout/TrackRecommendation";
 import Footer from "../Home/landing/Footer";
+import '../Home/landing/Programs.module.css'
+import programs from '../Home/landing/Programs.module.css'
 
 
 
@@ -87,28 +89,28 @@ function Quiz() {
 
         // Adjust scores based on marks
         if (mathSection) {
-            if (marks === 5) {
+            if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Data_Analysis: (prevScores.Data_Analysis || 0) + 25
+                  Data_Analysis: (prevScores.Data_Analysis || 0) + 15
                 }));
-              } else if (marks === 4) {
+              } else if (marks === 2) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Software_Development: (prevScores.Software_Development || 0) + 20,
-                  Cyber_Security: (prevScores.Cyber_Security || 0) + 20
+                  Software_Development: (prevScores.Software_Development || 0) + 15,
+                  Cyber_Security: (prevScores.Cyber_Security || 0) + 15
                 }));
-              } else if (marks === 3) {
+              } else if (marks === 1) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
                   Mobile_Development: (prevScores.Mobile_Development || 0) + 15,
                   ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
                 }));
-              } else if (marks <= 2) {
+              } else if (marks === 0) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Product_Design: (prevScores.Product_Design || 0) + 10,
-                  Product_Management: (prevScores.Product_Management || 0) + 10
+                  Product_Design: (prevScores.Product_Design || 0) + 15,
+                  Product_Management: (prevScores.Product_Management || 0) + 15
                 }));
             }
         }
@@ -119,28 +121,28 @@ function Quiz() {
 
         // Adjust scores based on marks
         if (logicSection) {
-            if (marks === 5) {
+            if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Data_Analysis: (prevScores.Data_Analysis || 0) + 25,
-                  Cyber_Security: (prevScores.Cyber_Security || 0) + 25
+                  Data_Analysis: (prevScores.Data_Analysis || 0) + 15,
+                  Cyber_Security: (prevScores.Cyber_Security || 0) + 15
                 }));
-              } else if (marks === 4) {
+              } else if (marks === 2) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Software_Development: (prevScores.Software_Development || 0) + 20,
+                  Software_Development: (prevScores.Software_Development || 0) + 15,
                 }));
-              } else if (marks === 3) {
+              } else if (marks === 1) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
                   ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
                 }));
-              } else if (marks <= 2) {
+              } else if (marks === 0) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Product_Design: (prevScores.Product_Design || 0) + 10,
-                  Product_Management: (prevScores.Product_Management || 0) + 10,
-                  Mobile_Development: (prevScores.Mobile_Development || 0) + 10
+                  Product_Design: (prevScores.Product_Design || 0) + 15,
+                  Product_Management: (prevScores.Product_Management || 0) + 15,
+                  Mobile_Development: (prevScores.Mobile_Development || 0) + 15
                 }));
             }
         }
@@ -216,7 +218,7 @@ function Quiz() {
                 
                 <div className="question-answers">
                     <div className="quiz-progress">
-                        <ProgressBar score={currentQuestion + 1} showPercentage={false} backgroundImage={false} />
+                        <ProgressBar score={(currentQuestion / sections[currentSection].questions.length) * 100}  showPercentage={false} backgroundImage={false} />
                     </div>
                     
                     <div id='question'>
@@ -301,7 +303,7 @@ function Quiz() {
                 </div>
             </div>
         ) : (
-            <div style={{width:"80%", boxSizing:"border-box", margin:"auto"}}>
+            <div style={{width:"100%", padding:"0", boxSizing:"border-box", margin:"auto", background:"#fff"}}>
 
                 
                 {/* Render the recommended track and message */} 
@@ -322,33 +324,51 @@ function Quiz() {
                     </div>
                 )}
 
-                <div className="result">
-                    <h2>Your Result Breakdown</h2>
-                    
-                    
-                    {Object.entries(finalScores).map(([track, score]) => (
-                    // <li className="scores-container" key={track}>{track}: {score}</li>
-                    // <div>
-                    //     {track}: <span><ProgressBar key={track} filled={score} /></span>
-                    // </div>
-    
-                    <div className="final-scores" key={track}>
-                        <div className="tracks-list">
-                            <div style={{fontSize:"14px", fontWeight:"600", color:"#424242"}}>{formatTrackName(track)} - {score}%</div>
+                <div className="result-container">
+                    <div className="result">
+                        <h2>Your Result Breakdown</h2>
+                        
+                        
+                        {Object.entries(finalScores).map(([track, score]) => (
+                        // <li className="scores-container" key={track}>{track}: {score}</li>
+                        // <div>
+                        //     {track}: <span><ProgressBar key={track} filled={score} /></span>
+                        // </div>
+        
+                        <div className="final-scores" key={track}>
+                            <div className="tracks-list">
+                                <div style={{fontSize:"14px", fontWeight:"600", color:"#424242"}}>{formatTrackName(track)} - {score}%</div>
+                            </div>
+                            <div className="score-bars">  
+                                <ProgressBar score={score} showPercentage={false} backgroundImage={true} /> {/* Pass the score as a prop */}    
+                            </div>
                         </div>
-                        <div className="score-bars">  
-                            <ProgressBar score={score} showPercentage={false} backgroundImage={true}/> {/* Pass the score as a prop */}    
-                        </div>
+                        
+                        ))}
+                    </div>  
+                </div>
+                
+                <div className={programs.box} style={{backgroundColor:"#ffffff"}}>
+                    <div className={programs.feature}>
+                        <p className={programs.text}>
+                        Eager to start your tech career? The Women Techsters Initiative have several programs designed to help YOU to break into the Tech Industry.
+                        </p>
                     </div>
-                    
-                    ))}
+
+                    <Button type="button" variant="primary" onClick={() => window.location.href = "https://www.womentechsters.org/programs"}>
+                        EXPLORE PROGRAMS
+                    </Button>
                 </div>
             </div>
+
+            
 
 
          
             
         )}
+
+        
       
       <Footer />   
                 

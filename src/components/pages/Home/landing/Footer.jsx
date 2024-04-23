@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className={footer.container}>
         <section className={footer.top}>
-          <img src="\images\logoft.png" className={footer.logo} />
+          <img src="\images\logo pathfinder white 1.png" className={footer.logo} />
           <ul className={footer.list}>
             <li>Footer Menu</li>
             <li>Programs</li>

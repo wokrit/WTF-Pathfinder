@@ -9,7 +9,7 @@ export default function Users() {
         <section className={users.wrapper}>
             <article>
                 <div className={users.profile}>
-                    <img src="..\src\assets\eleanor.png" className={users.pfp} />
+                    <img src="\images\eleanor.png" className={users.pfp} />
                     <span>Eleanor Pena</span>
                 </div>
 
@@ -20,7 +20,7 @@ export default function Users() {
 
             <article>
                 <div className={users.profile}>
-                    <img src="..\src\assets\jerome.png" className={users.pfp} />
+                    <img src="\images\jerome.png" className={users.pfp} />
                     <span>Jerome Bell</span>
                 </div>
 
@@ -32,7 +32,7 @@ export default function Users() {
             <article>
                 <div className={users.profile}>
 
-                    <img src="..\src\assets\ronald.png" className={users.pfp} />
+                    <img src="\images\ronald.png" className={users.pfp} />
                     <span>Ronald Richard</span>
 
                 </div>
@@ -44,7 +44,7 @@ export default function Users() {
             <article>
                 <div className={users.profile}>
 
-                    <img src="..\src\assets\dianne.png" className={users.pfp} />
+                    <img src="\images\dianne.png" className={users.pfp} />
                     <span>Dianne Russell</span>
 
                 </div>

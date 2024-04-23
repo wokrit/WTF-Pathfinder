@@ -16,3 +16,12 @@
     text-align: center;
     color: #424242;
 }
+
+@media(max-width:768px) {
+    .fit p {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+    }
+}

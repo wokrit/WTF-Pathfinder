@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef } from "react"
 import { useNavigate } from "react-router-dom"
-import { useState } from "react"
 import Button from "./Button"
 import Signup from "../pages/authentication/Signup"
 import userAuthContext from "../../context/UserAuthContext"

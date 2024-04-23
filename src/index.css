@@ -127,8 +127,8 @@
 
 @media (max-width: 720px) {
 :root {
-    --app-padding: 0 20px;
-    --app-margin: 0 20px;
+    --app-padding: 0 30px;
+    --app-margin: 0 30px;
     font-size: 10px;
     overflow: auto;
     }

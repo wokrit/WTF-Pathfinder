@@ -14,7 +14,7 @@ export default function Details() {
     <div className={details.container}>
         <section className={details.article}>
             <img src="\images\blackgirl.png" className={details.girl}/>
-            <div className={details.contents}>
+            <div className={details.one}>
                 <h3 className={details.heading}>
                     Personalised Career Recommendation
                 </h3>
@@ -22,8 +22,8 @@ export default function Details() {
             </div>
         </section>
 
-        <section className={details.article}>
-            <div className={details.content}>
+        <section className={details.articles}>
+            <div className={details.two}>
                 <h3 className={details.heading}>
                     Clarity and Direction
                 </h3>
@@ -31,6 +31,16 @@ export default function Details() {
             </div>
 
             <img src="\images\pinkgirl.png" className={details.girl} />
+        </section>
+
+        <section className={details.art}>
+            <div className={details.one}>
+                <img src="\images\pinkgirl.png" className={details.girl} />
+                <h3 className={details.heading}>
+                    Clarity and Direction
+                </h3>
+                <p className={details.desc}>Women Techsters Pathfinder offers clarity and direction by highlighting areas where you excel. Whether you're a recent graduate exploring entry-level positions or a seasoned professional considering a career switch, our platform equips you with the insights needed to make confident decisions about your tech career trajectory.</p>
+            </div>
         </section>
 
         <section className={details.ctatwo}>

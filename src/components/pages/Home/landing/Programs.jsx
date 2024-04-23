@@ -3,6 +3,10 @@ import Button from '../../../layout/Button'
 import programs from './Programs.module.css'
 
 export default function Programs() {
+    const handleProgram = () => {
+    window.location.href = 'https://www.womentechsters.org/programs';
+  };
+
   return (
     <div className={programs.container}>
         <div className={programs.box}>
@@ -19,7 +23,7 @@ export default function Programs() {
                 </p>
             </div>
 
-            <Button type="button" variant="secondary" onClick={"https://www.womentechsters.org/programs"}>
+            <Button type="button" variant="secondary" onClick={handleProgram}>
                 EXPLORE PROGRAMS
           </Button>
         </div>

@@ -19,7 +19,7 @@ export default function Programs() {
                 </p>
             </div>
 
-            <Button type="button" variant="secondary" onClick={"https://www.womentechsters.org/programs"}>
+            <Button type="button" variant="secondary" onClick={() => window.location.href = "https://www.womentechsters.org/programs"}>
                 EXPLORE PROGRAMS
           </Button>
         </div>

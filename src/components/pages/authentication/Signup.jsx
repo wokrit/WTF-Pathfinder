@@ -20,9 +20,13 @@ function Signup() {
     const [isPasswordFocused, setIsPasswordFocused] = useState(false); 
     const [isPasswordValid, setIsPasswordValid] = useState(false); 
     const [isChecked, setIsChecked] = useState(false);
-    const { signUp, windowWidth, setWindowWidth, googleSignIn } = useContext(userAuthContext);
+    const { signUp, windowWidth, setWindowWidth, isLoggedIn, setIsLoggedIn, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
 
+    
+    
+    
+    
     useEffect(() => {
       setWindowWidth(window.innerWidth);
     }, [setWindowWidth]);
@@ -68,6 +72,7 @@ function Signup() {
       if (password === confirmPassword) {
         try {
           await signUp(email, password);
+          setIsLoggedIn(true)
           navigate("/instructions");
         } catch (error) {
           setError("Sorry, something went wrong. Please try again");
@@ -81,7 +86,8 @@ function Signup() {
       e.preventDefault();
       try {
         await googleSignIn();
-        navigate("/login");
+        setIsLoggedIn(true)
+        navigate("/instructions");
       } catch (error) {
         console.log(error.message);
         setError("Sorry, something went wrong. Please try again");
@@ -214,7 +220,7 @@ function Signup() {
 
             <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
               <div className="googlebutton">
-                <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                <img src="\images\flat-color-icons_google.png" alt="google icon"/>
                 Sign Up with Google
               </div>  
             </Button>

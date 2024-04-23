@@ -87,28 +87,28 @@ function Quiz() {
 
         // Adjust scores based on marks
         if (mathSection) {
-            if (marks === 5) {
+            if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Data_Analysis: (prevScores.Data_Analysis || 0) + 25
+                  Data_Analysis: (prevScores.Data_Analysis || 0) + 15
                 }));
-              } else if (marks === 4) {
+              } else if (marks === 2) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Software_Development: (prevScores.Software_Development || 0) + 20,
-                  Cyber_Security: (prevScores.Cyber_Security || 0) + 20
+                  Software_Development: (prevScores.Software_Development || 0) + 15,
+                  Cyber_Security: (prevScores.Cyber_Security || 0) + 15
                 }));
-              } else if (marks === 3) {
+              } else if (marks === 1) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
                   Mobile_Development: (prevScores.Mobile_Development || 0) + 15,
                   ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
                 }));
-              } else if (marks <= 2) {
+              } else if (marks === 0) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Product_Design: (prevScores.Product_Design || 0) + 10,
-                  Product_Management: (prevScores.Product_Management || 0) + 10
+                  Product_Design: (prevScores.Product_Design || 0) + 15,
+                  Product_Management: (prevScores.Product_Management || 0) + 15
                 }));
             }
         }
@@ -119,28 +119,28 @@ function Quiz() {
 
         // Adjust scores based on marks
         if (logicSection) {
-            if (marks === 5) {
+            if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Data_Analysis: (prevScores.Data_Analysis || 0) + 25,
-                  Cyber_Security: (prevScores.Cyber_Security || 0) + 25
+                  Data_Analysis: (prevScores.Data_Analysis || 0) + 15,
+                  Cyber_Security: (prevScores.Cyber_Security || 0) + 15
                 }));
-              } else if (marks === 4) {
+              } else if (marks === 2) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Software_Development: (prevScores.Software_Development || 0) + 20,
+                  Software_Development: (prevScores.Software_Development || 0) + 15,
                 }));
-              } else if (marks === 3) {
+              } else if (marks === 1) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
                   ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
                 }));
-              } else if (marks <= 2) {
+              } else if (marks === 0) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Product_Design: (prevScores.Product_Design || 0) + 10,
-                  Product_Management: (prevScores.Product_Management || 0) + 10,
-                  Mobile_Development: (prevScores.Mobile_Development || 0) + 10
+                  Product_Design: (prevScores.Product_Design || 0) + 15,
+                  Product_Management: (prevScores.Product_Management || 0) + 15,
+                  Mobile_Development: (prevScores.Mobile_Development || 0) + 15
                 }));
             }
         }
@@ -216,7 +216,7 @@ function Quiz() {
                 
                 <div className="question-answers">
                     <div className="quiz-progress">
-                        <ProgressBar score={currentQuestion + 1} showPercentage={false} backgroundImage={false} />
+                        <ProgressBar score={(currentQuestion / sections[currentSection].questions.length) * 100}  showPercentage={false} backgroundImage={false} />
                     </div>
                     
                     <div id='question'>
@@ -337,7 +337,7 @@ function Quiz() {
                             <div style={{fontSize:"14px", fontWeight:"600", color:"#424242"}}>{formatTrackName(track)} - {score}%</div>
                         </div>
                         <div className="score-bars">  
-                            <ProgressBar score={score} showPercentage={false} backgroundImage={true}/> {/* Pass the score as a prop */}    
+                            <ProgressBar score={score} showPercentage={false} backgroundImage={true} /> {/* Pass the score as a prop */}    
                         </div>
                     </div>
                     

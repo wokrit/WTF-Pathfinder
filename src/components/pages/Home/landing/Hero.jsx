@@ -2,6 +2,7 @@ import React from 'react'
 import Button from '../../../layout/Button'
 import { useNavigate } from "react-router-dom"
 import hero from './Hero.module.css'
+import CountUp from 'react-countup'
 
 
 
@@ -30,21 +31,21 @@ export default function Hero() {
       
       <div className={hero.metric}>
         <div className={hero.detail}>
-            <h3>18.0%</h3>
+            <h3><CountUp start={18} end={100} duration ={2.75} />%</h3>
            <p>User Satisfaction Rate</p>
         </div>
 
         <div className={hero.divide}></div>
 
         <div className={hero.detail}>
-            <h3>10 +</h3>
+            <h3><CountUp start={10} end={120} duration ={2.75} />+</h3>
            <p>Countries Reached</p>
         </div>
 
         <div className={hero.divide}></div>
 
         <div className={hero.detail}>
-            <h3>2 M+</h3>
+            <h3><CountUp start={2} end={10} duration ={2.75} />M+</h3>
            <p>Assessments  Taken</p>
         </div>
 

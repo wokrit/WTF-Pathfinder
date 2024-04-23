@@ -10,17 +10,17 @@
 }
 
 .logo {
-    display: flex;
-    width: 123px;
-    height: 145px;
-    padding: 26px;
-    flex-direction: column;
+    /* display: flex; */
+    width: 150px;
+    height: 93px;
+    /* padding: 26px; */
+    /* flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
-    border-radius: 0px 0px 10px 10px;
-    background: #FEF8F4;
-    margin-top: -1.5rem;
+    border-radius: 0px 0px 10px 10px; */
+    /* background: #FEF8F4; */
+    /* margin-top: -1.5rem; */
 }
 
 .top {

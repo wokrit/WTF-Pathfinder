@@ -5,7 +5,7 @@ export default function Footer() {
   return (
     <div className={footer.container}>
         <section className={footer.top}>
-          <img src="\images\WT-LOGO-1 1.png" className={footer.logo} />
+          <img src="\images\logo pathfinder white 1.png" className={footer.logo} />
           <ul className={footer.list}>
             <li>Footer Menu</li>
             <li>Programs</li>
@@ -18,19 +18,19 @@ export default function Footer() {
             <li><a href="mailto:Email@Wtfellowship@tech4dev.com">Email@Wtfellowship@tech4dev.com</a></li>
             <li className={footer.sm}>
               <a href="https://web.facebook.com/Tech4DevHQ/?_rdc=1&_rdr" target='_blank'>
-                <img src="..\src\assets\fb.png" className={footer.social}/>
+                <img src="\images\fb.png" className={footer.social}/>
               </a>
 
               <a href="https://web.facebook.com/Tech4DevHQ/?_rdc=1&_rdr" target='_blank'>
-                <img src="..\src\assets\twitter.png" className={footer.social}/>
+                <img src="\images\twitter.png" className={footer.social}/>
               </a>
 
               <a href="https://web.facebook.com/Tech4DevHQ/?_rdc=1&_rdr" target='_blank'>
-                <img src="..\src\assets\linkedin.png" className={footer.socials}/>
+                <img src="\images\linkedin.png" className={footer.socials}/>
               </a>
 
               <a href="https://web.facebook.com/Tech4DevHQ/?_rdc=1&_rdr" target='_blank'>
-                <img src="..\src\assets\ig.png" className={footer.social} />
+                <img src="\images\ig.png" className={footer.social} />
               </a>
             </li>
           </ul>

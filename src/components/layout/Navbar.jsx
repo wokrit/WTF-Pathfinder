@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef } from "react"
+import { useState, useEffect, useRef, useContext } from "react"
 import { useNavigate } from "react-router-dom"
 import Button from "./Button"
-import Signup from "../pages/authentication/Signup"
+// import Signup from "../pages/authentication/Signup"
 import userAuthContext from "../../context/UserAuthContext"
 import { RxHamburgerMenu } from "react-icons/rx"
 
@@ -11,7 +11,9 @@ function Navbar() {
     const navigate = useNavigate()
     const [showMobileMenu, setShowMobileMenu] = useState(false);
     const mobileMenuRef = useRef(null);
-
+    const { logOut } = useContext(userAuthContext);
+    const { isLoggedIn, setIsLoggedIn } = useContext(userAuthContext);
+    // console.log(typeof logOut);
     const handleSignup = () => {
         navigate("/Signup");
     }
@@ -19,6 +21,22 @@ function Navbar() {
     // const handleLogin = () => {
     //     navigate("/Login");
     // }
+
+    const handleLogout = async (e) => {  
+        e.preventDefault();           
+        try {
+            await logOut();
+            setIsLoggedIn(false)
+        // Sign-out successful.
+            // setIsLoggedIn(false);
+            navigate("/");
+            console.log("Signed out successfully")
+        } catch (error)  {
+        // An error happened.
+        console.log("error")
+        }
+    }
+
 
     const toggleMobileMenu = () => {
         setShowMobileMenu(!showMobileMenu);
@@ -40,7 +58,7 @@ function Navbar() {
   return (
     <>
         <nav className="navbar">
-            <img className="wtf-logo" alt="WTF Logo" src="\images\WT-LOGO-1 1.png" onClick={() => navigate("/")}  />
+            <img className="pathfinder-logo" alt="pathfinder logo" src="\images\Logo pathfinder purple 1.png" onClick={() => navigate("/")}  />
             <ul className="nav-links">
                 <li>About</li>
                 <li>Programs</li>
@@ -51,9 +69,15 @@ function Navbar() {
                 {/* <Button type="button" variant="secondary" onClick={handleLogin}>
                     Login
                 </Button> */}
-                <Button type="button" variant="primary" onClick={handleSignup}>
-                    Take Assesment
-                </Button>
+                {isLoggedIn ? (
+                    <Button type="button" variant="primary" onClick={handleLogout}>
+                        Log out
+                    </Button>
+                ) : (
+                    <Button type="button" variant="primary" onClick={handleSignup}>
+                        Take Assessment
+                    </Button>
+                )}
             </div>
 
             <div className="hamburger-icon" onClick={toggleMobileMenu}>
@@ -70,9 +94,15 @@ function Navbar() {
                 {/* <Button type="button" variant="secondary" onClick={handleLogin}>
                     Login
                 </Button> */}
-                <Button type="button" variant="primary" onClick={handleSignup}>
-                    Take Assesment
-                </Button>
+               {isLoggedIn ? (
+                    <Button type="button" variant="primary" onClick={handleLogout}>
+                        Log out
+                    </Button>
+                ) : (
+                    <Button type="button" variant="primary" onClick={handleSignup}>
+                        Take Assessment
+                    </Button>
+                )}
            
         </div>
             

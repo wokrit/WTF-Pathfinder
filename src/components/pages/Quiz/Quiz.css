@@ -564,6 +564,7 @@ footer .footer_copyright {
   position: absolute;
   bottom:0;
   left:0;
+  border-radius: 16px;
 }
 .confetti2 {
   width: 150px;
@@ -572,6 +573,7 @@ footer .footer_copyright {
   position: absolute;
   top: 0;
   right: 0;
+  border-radius: 16px;
 }
 .result-container{
   background: rgba(227, 207, 232, 0.20);

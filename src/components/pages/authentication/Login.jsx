@@ -129,7 +129,7 @@ function Login() {
                         Continue with Google
                       </div>  
                     </Button>
-                    <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
+                    <h3 style={{ textAlign: 'center', margin:"4px" }}>OR</h3>
                     <form onSubmit={handleSubmit}>
                         <div className="user-detail">
                             <label>Email</label>

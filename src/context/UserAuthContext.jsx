@@ -26,6 +26,8 @@ export function UserAuthContextProvider({ children }) {
     const googleSignIn = () => {
       const googleAuthProvider = new GoogleAuthProvider();
       return signInWithPopup(auth, googleAuthProvider);
+      // const googleAuthProvider = new GoogleAuthProvider();
+      // googleAuthProvider.addScope("email");
   };
 
 

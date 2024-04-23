@@ -8,6 +8,7 @@ import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";
 import { PiEyeSlashLight } from "react-icons/pi";
 import { PiEyeLight } from "react-icons/pi";
+import { onAuthStateChanged } from "firebase/auth";
 
 
 function Signup() {
@@ -25,7 +26,7 @@ function Signup() {
 
     
     
-    
+   
     
     useEffect(() => {
       setWindowWidth(window.innerWidth);
@@ -93,6 +94,7 @@ function Signup() {
         setError("Sorry, something went wrong. Please try again");
       }
     };
+
 
     const toggleModal = () => {
       setModal(!modal);
@@ -224,7 +226,7 @@ function Signup() {
                 Sign Up with Google
               </div>  
             </Button>
-            <h5 style={{ textAlign: 'center', margin:"4px" }}>OR</h5>
+            <h3 style={{ textAlign: 'center', margin:"4px" }}>OR</h3>
             <form onSubmit={handleSubmit}>
               <div className="user-detail">
                 <label>Email</label>

@@ -48,7 +48,7 @@ function Signup() {
       <div className="password-requirements">
         <p>Password must:</p>
         <ul>
-          <li>Be at least  characters long</li>
+          <li>Be at least 8 characters long</li>
           <li>Contain at least one uppercase letter</li>
           <li>Contain at least one lowercase letter</li>
           <li>Contain at least one number</li>
@@ -68,7 +68,7 @@ function Signup() {
       if (password === confirmPassword) {
         try {
           await signUp(email, password);
-          navigate("/login");
+          navigate("/instructions");
         } catch (error) {
           setError("Sorry, something went wrong. Please try again");
         }

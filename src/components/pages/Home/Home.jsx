@@ -21,7 +21,7 @@ function Home() {
   }
 
 
-  // const [showCookieConsent, setShowCookieConsent] = useState(true); 
+  const [showCookieConsent, setShowCookieConsent] = useState(true); 
 
   // useEffect(() => {
   //   const cookieConsentAccepted = Cookies.get('cookieConsent') === 'accepted';

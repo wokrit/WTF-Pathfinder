@@ -40,8 +40,11 @@ export default function Footer() {
 
         <section className={footer.copyright}>
           <p>
-            <small>©</small> Women Techsters @2024. All rights reserved
+            <small>©</small> Pathfinder @2024. All rights reserved
           </p>
+
+          <p className={footer.initiative}><span>An intiative of</span> <img src='\images\tech4dev.png' className={footer.tech} /> </p>
+
           <p><a href="">Privacy Policy</a></p>
         </section>
     </div>

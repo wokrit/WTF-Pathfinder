@@ -5,6 +5,10 @@
   --app-padding: 0 50px;
   --app-margin: 0 50px;
   overflow: auto;
+  background: #fff;
+}
+body{
+  /* background: #fff; */
 }
 
 * {

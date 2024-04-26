@@ -9,8 +9,8 @@ import Footer from "./landing/Footer"
 import styles from './Home.module.css'; 
 import { useNavigate } from "react-router-dom"
 import React, { useEffect, useState } from 'react';
-// import CookieConsent from './CookieConsent';
-// import Cookies from 'js-cookie';
+import CookieConsent from './CookieConsent';
+import Cookies from 'js-cookie';
 
 
 function Home() {
@@ -23,19 +23,19 @@ function Home() {
 
   const [showCookieConsent, setShowCookieConsent] = useState(true); 
 
-  // useEffect(() => {
-  //   const cookieConsentAccepted = Cookies.get('cookieConsent') === 'accepted';
-  //   setShowCookieConsent(!cookieConsentAccepted);
-  // }, []);
+  useEffect(() => {
+    const cookieConsentAccepted = Cookies.get('cookieConsent') === 'accepted';
+    setShowCookieConsent(!cookieConsentAccepted);
+  }, []);
 
-  // const handleAccept = () => {
-  //   Cookies.set('cookieConsent', 'accepted', { expires: 365 });
-  //   setShowCookieConsent(false);
-  // };
+  const handleAccept = () => {
+    Cookies.set('cookieConsent', 'accepted', { expires: 365 });
+    setShowCookieConsent(false);
+  };
 
-  // const handleDecline = () => {
-  //   setShowCookieConsent(false);
-  // };
+  const handleDecline = () => {
+    setShowCookieConsent(false);
+  };
 
 
   return (

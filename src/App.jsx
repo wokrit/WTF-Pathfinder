@@ -8,15 +8,13 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Quiz from "./components/pages/Quiz/Quiz"
 import ProgressBar from "./components/layout/ProgressBar"
 import Instructions from "./components/pages/Quiz/Instructions"
-
+import PrivacyPolicy from "./components/pages/Policies/PrivacyPolicy"
 
 function App() {
-  
 
   return (
     
     <>
-      
       <UserAuthContextProvider>
          
         {/* <Navbar /> */}
@@ -27,8 +25,7 @@ function App() {
             <Route path="/signup" element={<Signup />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/instructions" element={<Instructions />} />
-           
-            
+            <Route path="/privacypolicy" element={<PrivacyPolicy />} /> 
           </Routes>
         </Router>
         {/* <QuestionStats /> */}

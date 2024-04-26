@@ -1,0 +1,51 @@
+body{
+    background: #fff;
+    color: #424242;
+}
+
+.privacypolicy{
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+.policies{
+    display: flex; 
+    flex-direction:column;
+    gap: 16px;
+}
+.policies ol li {
+    font-weight: 600;
+    color: #89369E;
+    list-style-position: inside;
+    font-size: 16px ;
+    
+    
+}
+.policies ol div ul li {
+    font-weight: normal;
+    font-size: 14px;
+    color: #424242;
+    list-style-type: disc;
+}
+a{
+    color: blue;
+}
+.tableContents{
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.tableContents ol{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    list-style-position: inside ;
+    font-size: 14px;
+}
+h1, h2, h3 {
+    color:#89369E;
+}
+h3 {
+    font-size: 18px;
+}

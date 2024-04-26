@@ -100,8 +100,8 @@ function Login() {
                         ) : (
                           <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
                         )}
-                        <div className="error-message">{ "" !== error && error }</div>
                       </div>
+                      <div className="error-message">{ "" !== error && error }</div>
                     
                       <Button type="Submit" variant="primary">
                         Login
@@ -154,8 +154,8 @@ function Login() {
                           ) : (
                             <PiEyeLight className="icon" onClick={() => setShowPassword(true)} />
                           )}
-                          <div className="error-message">{ "" !== error && error }</div>
                         </div>
+                        <div className="error-message">{ "" !== error && error }</div>
                       
                         <Button type="Submit" variant="primary">
                           Login

@@ -272,17 +272,17 @@ const data = {
                       {
                           answerID : 'A', 
                           answerText: 'Stongly Agree', 
-                          scores: {Product_Design: 10, Mobile_Development: 10, ThreeD_Animation: 10 }
+                          scores: {Product_Design: 10, Mobile_Development: 10, "Mixed_Realities_and_3D_Animation": 10 }
                       },
                       {
                           answerID : 'B', 
                           answerText: 'Agree', 
-                          scores: { Product_Design: 10, Mobile_Development: 10, ThreeD_Animation: 10}
+                          scores: { Product_Design: 10, Mobile_Development: 10, "Mixed_Realities_and_3D_Animation": 10}
                       },
                       {
                           answerID : 'C', 
                           answerText: 'Neutral', 
-                          scores: { Cyber_Security: 10, Data_Analysis: 10, Blockchain_Development: 10, Software_Development: 10, Product_Management: 10  }
+                          scores: { Cyber_Security: 10, Data_Science_and_AI: 10, Blockchain_Development: 10, Software_Development: 10, Product_Management: 10  }
                       },
                       {
                           answerID : 'D', 
@@ -304,12 +304,12 @@ const data = {
                         {
                             answerID : 'A', 
                             answerText: 'Strongly Agree', 
-                            scores: { Product_Management: 10, Data_Analysis: 10, Software_Development:10, Cyber_Security: 10 }
+                            scores: { Product_Management: 10, Data_Science_and_AI: 10, Software_Development:10, Cyber_Security: 10 }
                         },
                         {
                             answerID : 'B', 
                             answerText: 'Agree', 
-                            scores: { Product_Management: 10, Data_Analysis: 10, Software_Development:10, Cyber_Security: 10}
+                            scores: { Product_Management: 10, Data_Science_and_AI: 10, Software_Development:10, Cyber_Security: 10}
                         },
                         {
                             answerID : 'C', 
@@ -324,7 +324,7 @@ const data = {
                         {
                             answerID : 'E', 
                             answerText: 'Strongly Disagree', 
-                            scores: { ThreeD_Animation: 10, Blockchain_Development: 10}
+                            scores: { "Mixed_Realities_and_3D_Animation": 10, Blockchain_Development: 10}
                         }
                     ]
                 },
@@ -334,7 +334,7 @@ const data = {
                         {
                             answerID : 'A', 
                             answerText: 'Remain calm and focused, finding effective solutions', 
-                            scores: { Product_Management: 10, Data_Analysis: 10, Software_Development:10, Cyber_Security: 10 }
+                            scores: { Product_Management: 10, Data_Science_and_AI: 10, Software_Development:10, Cyber_Security: 10 }
                         },
                         {
                             answerID : 'B', 
@@ -344,7 +344,7 @@ const data = {
                         {
                             answerID : 'C', 
                             answerText: 'Sometimes feel overwhelmed, but manage to cope', 
-                            scores: { ThreeD_Animation: 10, Mobile_Development: 10}
+                            scores: { "Mixed_Realities_and_3D_Animation": 10, Mobile_Development: 10}
                         },
                         {
                             answerID : 'D', 
@@ -359,12 +359,12 @@ const data = {
                         {
                             answerID : 'A', 
                             answerText: 'Strongly Agree', 
-                            scores: { Product_Management: 10, Data_Analysis: 10, Cyber_Security: 10 }
+                            scores: { Product_Management: 10, Data_Science_and_AI: 10, Cyber_Security: 10 }
                         },
                         {
                             answerID : 'B', 
                             answerText: 'Agree ', 
-                            scores: { Product_Management: 10, Data_Analysis: 10, Cyber_Security: 10}
+                            scores: { Product_Management: 10, Data_Science_and_AI: 10, Cyber_Security: 10}
                         },
                         {
                             answerID : 'C', 
@@ -374,12 +374,12 @@ const data = {
                         {
                             answerID : 'D', 
                             answerText: 'Disagree ', 
-                            scores: { Product_Design: 10, ThreeD_Animation: 10, Mobile_Development: 10, Blockchain_Development: 10 }
+                            scores: { Product_Design: 10, "Mixed_Realities_and_3D_Animation": 10, Mobile_Development: 10, Blockchain_Development: 10 }
                         },
                         {
                             answerID : 'E', 
                             answerText: ' Strongly Disagree ', 
-                            scores: { Product_Design: 10, ThreeD_Animation: 10, Mobile_Development: 10, Blockchain_Development: 10 }
+                            scores: { Product_Design: 10, "Mixed_Realities_and_3D_Animation": 10, Mobile_Development: 10, Blockchain_Development: 10 }
                         }
                     ]
                 }
@@ -394,12 +394,12 @@ const data = {
                       {
                           answerID : 'A', 
                           answerText: 'Utilize advanced data analytics to recommend relevant connections and networking opportunities based on user interests and career goals. ', 
-                          scores: { Data_Analysis: 10}
+                          scores: { Data_Science_and_AI: 10}
                       },
                       {
                           answerID : 'B', 
                           answerText: 'Incorporate interactive 3D avatars and virtual meeting spaces to simulate face-to-face interactions and networking events. ', 
-                          scores: {ThreeD_Animation: 10}
+                          scores: {"Mixed_Realities_and_3D_Animation": 10}
                       },
                       {
                           answerID : 'C', 
@@ -430,7 +430,7 @@ const data = {
                       {
                           answerID : 'B', 
                           answerText: "Integrate immersive 3D visuals and interactive elements into the e-learning platform's content to enhance engagement and retention", 
-                          scores: {ThreeD_Animation: 10}
+                          scores: {"Mixed_Realities_and_3D_Animation": 10}
                       },
                       {
                           answerID : 'C', 
@@ -445,7 +445,7 @@ const data = {
                       {
                           answerID : 'E', 
                           answerText: 'Employ data analytics to track learner progress and preferences, enabling personalized learning experiences and content recommendations.', 
-                          scores: { Data_Analysis: 10}
+                          scores: { Data_Science_and_AI: 10}
                       }
                     ]
                     
@@ -461,12 +461,12 @@ const data = {
                       {
                           answerID : 'A', 
                           answerText: 'Not confident at all', 
-                          scores: { Product_Design: 10, ThreeD_Animation: 10, Product_Management: 10}
+                          scores: { Product_Design: 10, "Mixed_Realities_and_3D_Animation": 10, Product_Management: 10}
                       },
                       {
                           answerID : 'B', 
                           answerText: 'Moderately confident', 
-                          scores: {Data_Analysis: 10, Blockchain_Development: 10 }
+                          scores: {Data_Science_and_AI: 10, Blockchain_Development: 10 }
                       },
                       {
                           answerID : 'C', 
@@ -482,7 +482,7 @@ const data = {
                 //         {
                 //             answerID : 'A', 
                 //             answerText: 'Not comfortable', 
-                //             scores: { Product_Design: 5, ThreeD_Animation: 5 }
+                //             scores: { Product_Design: 5, "Mixed_Realities_and_3D_Animation": 5 }
                 //         },
                 //         {
                 //             answerID : 'B', 
@@ -492,7 +492,7 @@ const data = {
                 //         {
                 //             answerID : 'C', 
                 //             answerText: 'Very comfortable', 
-                //             scores: { Data_Analysis: 5 }
+                //             scores: { Data_Science_and_AI: 5 }
                 //         }
                 //     ]
                     

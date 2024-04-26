@@ -8,7 +8,7 @@ import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";
 import { PiEyeSlashLight } from "react-icons/pi";
 import { PiEyeLight } from "react-icons/pi";
-import { onAuthStateChanged } from "firebase/auth";
+
 
 
 function Signup() {
@@ -21,12 +21,12 @@ function Signup() {
     const [isPasswordFocused, setIsPasswordFocused] = useState(false); 
     const [isPasswordValid, setIsPasswordValid] = useState(false); 
     const [isChecked, setIsChecked] = useState(false);
-    const { signUp, windowWidth, setWindowWidth, isLoggedIn, setIsLoggedIn, googleSignIn } = useContext(userAuthContext);
+    const { user, signUp, windowWidth, setWindowWidth, isLoggedIn, setIsLoggedIn, googleSignIn } = useContext(userAuthContext);
     let navigate = useNavigate();
 
     
     
-   
+    
     
     useEffect(() => {
       setWindowWidth(window.innerWidth);
@@ -195,7 +195,7 @@ function Signup() {
                       checked={isChecked} 
                       onChange={() => setIsChecked(!isChecked)} // Toggle isChecked state
                     />
-                    <label htmlFor="terms"><p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span></p></label>
+                    <label htmlFor="terms"><p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span><Link to="/privacypolicy" className="custom-link">Terms of Service</Link></span> and <span><Link to="/privacypolicy"className="custom-link">Privacy Policy</Link></span></p></label>
                   </div>
 
                   <Button type="Submit" variant="primary">
@@ -283,7 +283,7 @@ function Signup() {
                   checked={isChecked} 
                   onChange={() => setIsChecked(!isChecked)} // Toggle isChecked state
                 />
-                <label htmlFor="terms"><p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span>Terms of Service</span> and <span>Privacy Policy</span></p></label>
+                <label htmlFor="terms"><p className="account-cta">By using WomenTechsters Pathfinder, you agree to our <span><Link to="/privacypolicy" className="custom-link">Terms of Service</Link></span> and <span><Link to="/privacypolicy"className="custom-link">Privacy Policy</Link></span></p></label>
               </div>
 
               <Button type="Submit" variant="primary">

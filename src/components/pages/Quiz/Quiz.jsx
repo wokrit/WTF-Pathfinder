@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useContext } from "react"
 import './Quiz.css'
 import Button from "../../layout/Button";
 import data from "../../../data"
@@ -8,6 +8,7 @@ import renderTrackMessage from "../../layout/TrackRecommendation";
 import Footer from "../Home/landing/Footer";
 import '../Home/landing/Programs.module.css'
 import programs from '../Home/landing/Programs.module.css'
+import userAuthContext from '../../../context/UserAuthContext';
 
 
 
@@ -16,6 +17,7 @@ const { sections } = data;
 function Quiz() {
         
     //creating useStates for the questions, scores for each track in each answer option and the final scores
+    const { user } = useContext(userAuthContext);
     const [currentSection, setCurrentSection] = useState(0);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [trackScores, setTrackScores] = useState({
@@ -24,9 +26,9 @@ function Quiz() {
         Product_Design: 0,
         Product_Management: 0,
         Cyber_Security: 0,
-        Data_Analysis: 0,
+        Data_Science_and_AI: 0,
         Blockchain_Development: 0,
-        ThreeD_Animation: 0
+        "Mixed_Realities_and_3D_Animation": 0
     });
     // const [showScore, setShowScore] = useState(false)
     const [finalScores, setFinalScores] = useState(null);
@@ -41,12 +43,12 @@ function Quiz() {
 
         console.log("section:", currentSection)
         console.log("status:", correct)
-        if (currentSection === 0 && correct) {    
+        if (currentSection <= 1 && correct) {    
             setMarks(prev => prev + 1)
             // console.log("what")
         }
         
-        if (currentSection > 0) {
+        if (currentSection > 1) {
             setTrackScores(prevScores => {
                 const updatedScores = { ...prevScores };
                 for (const track in updatedScores) {
@@ -92,7 +94,7 @@ function Quiz() {
             if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Data_Analysis: (prevScores.Data_Analysis || 0) + 15
+                  Data_Science_and_AI: (prevScores.Data_Science_and_AI || 0) + 15
                 }));
               } else if (marks === 2) {
                 setTrackScores(prevScores => ({
@@ -104,7 +106,7 @@ function Quiz() {
                 setTrackScores(prevScores => ({
                   ...prevScores,
                   Mobile_Development: (prevScores.Mobile_Development || 0) + 15,
-                  ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
+                  "Mixed_Realities_and_3D_Animation": (prevScores["Mixed_Realities_and_3D_Animation"] || 0) + 15
                 }));
               } else if (marks === 0) {
                 setTrackScores(prevScores => ({
@@ -124,7 +126,7 @@ function Quiz() {
             if (marks === 3) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  Data_Analysis: (prevScores.Data_Analysis || 0) + 15,
+                  Data_Science_and_AI: (prevScores.Data_Science_and_AI || 0) + 15,
                   Cyber_Security: (prevScores.Cyber_Security || 0) + 15
                 }));
               } else if (marks === 2) {
@@ -135,7 +137,7 @@ function Quiz() {
               } else if (marks === 1) {
                 setTrackScores(prevScores => ({
                   ...prevScores,
-                  ThreeD_Animation: (prevScores.ThreeD_Animation || 0) + 15
+                  "Mixed_Realities_and_3D_Animation": (prevScores["Mixed_Realities_and_3D_Animation"] || 0) + 15
                 }));
               } else if (marks === 0) {
                 setTrackScores(prevScores => ({
@@ -311,7 +313,7 @@ function Quiz() {
                     <div className="recommendations">
                         <div className="recommendation">
                             <div className="recommendation-track">
-                                <p>Your recommended track is: </p>
+                                <p>Hi {user.email}, Your recommended track is: </p>
                                 <h1 style={{color:"#5F0C74"}}> {formatTrackName(highestScoringTrack)}</h1>
                                 <img className="confetti1" alt="confetti" src="\images\Recomendation confetti.png"></img>
                                 <img className="confetti2" alt="confetti" src="\images\Recommendation confetti 2.png"></img>

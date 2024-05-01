@@ -13,7 +13,7 @@ export default function Details() {
   return (
     <div className={details.container}>
         <section className={details.article}>
-            <img src="\images\blackgirl.png" className={details.girl}/>
+            <img src="\images\purplegirl.png" className={details.girl}/>
             <div className={details.one}>
                 <h3 className={details.heading}>
                     Personalised Career Recommendation

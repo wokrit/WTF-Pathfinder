@@ -1,12 +1,10 @@
 .container {
     background-color:#26052E;;
-    /* padding: var(--app-padding); */
     padding-top: 1.5rem;
     padding-bottom: 1rem;
     color: white;
     display: flex;
     flex-direction: column;
-    /* align-items: end; */
 }
 
 .logo {
@@ -19,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     margin: var(--app-margin);
-    width: 93%;
+    /* width: 93%;npm */
 }
 
 .list {
@@ -92,7 +90,7 @@
 @media (max-width:768px) {
     .top {
         margin: var(--app-margin);
-        padding: var(--app-padding);
+        /* padding: var(--app-padding); */
         display: grid;
         grid-template-columns: 1fr 1fr;
     }
@@ -106,7 +104,7 @@
     .list {
         display: flex;
         flex-direction: row;
-        width: 170px;
+        width: fit-content;
         flex-wrap: wrap;
     }
 
@@ -117,12 +115,16 @@
     .copyright {
         display: flex;
         justify-content: space-between;
-        width: 98%;
-        margin: var(--app-margin);
-        padding: var(--app-padding);
+        /* margin: var(--app-margin); */
     }
 
     .copyright p {
-        font-size: 10px;
+        font-size: 8px;
     }
+
+        .initiative {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
 }

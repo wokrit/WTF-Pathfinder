@@ -1,0 +1,59 @@
+.container {
+    display: flex;
+    height: 464px;
+    gap: 3rem;
+    position: relative;
+}
+
+.container img {
+    width: 368px;
+    height: 464px;
+    animation: opacity 0.5s ease-in-out;
+}
+
+.box1 {
+    width: 236px;
+        height: 216px;
+}
+
+.box2 {
+    width: 200.107px;
+        height: 224px;
+        flex-shrink: 0;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+
+
+.text {
+    position: absolute;
+    bottom: 0.5px;
+    transition: opacity 0.5s ease-in-out;
+    animation: slideInFromLeft 3s ease-in-out infinite;
+    color: black;
+    background-color: white;
+    padding: 0.2rem 0.5rem;
+    border-top-right-radius: 8px;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+    
+        50% {
+            transform: translateX(0%);
+            opacity: 1;
+        }
+    
+        100% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+}

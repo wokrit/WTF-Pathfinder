@@ -430,6 +430,7 @@ footer .footer_copyright {
     width: 100px;
     height: 100px;
   }
+  
   .result{
     align-items:flex-start;
     padding: 24px;
@@ -521,7 +522,7 @@ footer .footer_copyright {
   align-items: flex-start;
   gap: 58px;
   width:100%;
-  margin: 48px 0;
+  padding: 48px 10%;
 }
 .recommendation-track {
   display: flex;
@@ -571,4 +572,12 @@ footer .footer_copyright {
   position: absolute;
   top: 0;
   right: 0;
+}
+.result-container{
+  background: rgba(227, 207, 232, 0.20);
+  display: flex;
+  align-items: center;
+  padding: 48px 0;
+  width: 100%;
+  padding: 80px 10%;
 }

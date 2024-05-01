@@ -69,9 +69,10 @@
   list-style-type: none;
 }
 
-.wtf-logo {
-  width: 48px;
-  height: 56px; 
+.pathfinder-logo {
+  width: 100px;
+  height: 61px; 
+  cursor: pointer;
 }
 .nav-links {
   display: flex;
@@ -179,9 +180,9 @@
 
 
 @media (max-width: 720px) {
-  .wtf-logo {
-    width: 32px;
-    height: 40px; 
+  .pathfinder-logo {
+    width: 60px;
+    height: 37px; 
   }
   .nav-links {
     display: none; /* Hide the nav links */

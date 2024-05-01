@@ -15,7 +15,7 @@ function Login() {
     const [password, setPassword] = useState("");
     const [modal, setModal] = useState(true);
     const [showPassword, setShowPassword] = useState(false);
-    const { logIn, googleSignIn, windowWidth, setWindowWidth} = useContext(userAuthContext);
+    const { logIn, isLoggedIn, setIsLoggedIn, googleSignIn, windowWidth, setWindowWidth} = useContext(userAuthContext);
     let navigate = useNavigate();
 
     useEffect(() => {
@@ -26,6 +26,7 @@ function Login() {
         e.preventDefault();
         try {
           await logIn(email, password);
+          setIsLoggedIn(true)
           navigate("/instructions");
         } catch (error) {
           setError("Your username or password is incorrect");
@@ -36,6 +37,7 @@ function Login() {
       e.preventDefault();
       try {
         await googleSignIn();
+        setIsLoggedIn(true)
         navigate("/instructions");
       } catch (error) {
         console.log(error.message);
@@ -123,7 +125,7 @@ function Login() {
 
                     <Button type="Submit" variant="secondary" onClick={handleGoogleSignIn}>
                       <div className="googlebutton">
-                        <img src=".\src\assets\flat-color-icons_google.png" alt="google icon"/>
+                        <img src=".\images\flat-color-icons_google.png" alt="google icon"/>
                         Continue with Google
                       </div>  
                     </Button>

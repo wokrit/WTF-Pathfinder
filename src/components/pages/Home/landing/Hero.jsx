@@ -2,6 +2,8 @@ import React from 'react'
 import Button from '../../../layout/Button'
 import { useNavigate } from "react-router-dom"
 import hero from './Hero.module.css'
+import Automation from "./Automation"
+import MobileAnimation from './MobileAnimation'
 import CountUp from 'react-countup'
 
 
@@ -12,6 +14,8 @@ export default function Hero() {
     const handleSignup = () => {
         navigate("/Signup");
     }
+
+    
 
   return (
     <div className={hero.container}>
@@ -26,8 +30,14 @@ export default function Hero() {
           </Button>
         </div>
 
-        <img src="\images\Hero Slide Accordion.png" className={hero.pic}></img>
+        {/* <img src="\images\Hero Slide Accordion.png" className={hero.pic}></img> */}
+
+        <div className={hero.pic}><Automation> </Automation></div>
       </div>
+
+      {/* <div className={hero.mobile}>
+        <MobileAnimation></MobileAnimation>
+      </div> */}
       
       <div className={hero.metric}>
         <div className={hero.detail}>

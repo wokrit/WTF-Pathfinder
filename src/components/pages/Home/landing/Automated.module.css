@@ -1,0 +1,9 @@
+.container {
+    display: flex;
+}
+
+.container img {
+    width: 200.107px;
+        height: 224px;
+        flex-shrink: 0;
+}

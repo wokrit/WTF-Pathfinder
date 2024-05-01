@@ -1,5 +1,5 @@
 .container {
-    background-image: url(/src/assets/Homepage.png);
+    background-image: url(/images/Homepage.png);
     background-size: 100% 100%;
     padding: var(--app-padding);
     display: flex;

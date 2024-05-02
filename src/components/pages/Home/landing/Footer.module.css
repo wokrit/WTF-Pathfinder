@@ -16,6 +16,7 @@
 .top {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: var(--app-margin);
     /* width: 93%;npm */
 }

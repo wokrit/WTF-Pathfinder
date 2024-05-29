@@ -79,6 +79,10 @@
 }
 
 @media (max-width:768px) {
+    .container {
+       gap: 24px;
+    }
+
     .article {
         display: flex;
         flex-direction: column;
@@ -99,7 +103,8 @@
 
     .girl {
         width: 287px;
-        height: 208px;
+        /* height: 208px; */
+        height: 310px;
     }
 
     .one {
@@ -116,7 +121,7 @@
             align-items: center;
             text-align: center;
             line-height: 22.4px;
-    }
+        }
 
     .heading {
         font-size: 20px;

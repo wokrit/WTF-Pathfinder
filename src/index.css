@@ -7,9 +7,9 @@
   overflow: auto;
   background: #fff;
 }
-body{
-  /* background: #fff; */
-}
+/* body{
+
+} */
 
 * {
   padding: 0;
@@ -150,7 +150,10 @@ body{
   
 }
 
-
+.btn {
+  height: 40px;
+  font-size: 12px;
+}
 
 
 .hamburger-icon {
@@ -158,24 +161,48 @@ body{
   cursor: pointer;
 }
 
+.menu-overlay {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 999; /* Behind the mobile menu but above the rest of the page */
+}
+
+.menu-overlay.show {
+  display: block;
+}
+
 .mobile-menu {
-  display: none;
+  display:flex;
+  flex-direction: column;
   background-color: #fff;
   position: absolute;
   top: 0;
   right: 0;
-  width: 80%;
-  /* height:100%; */
+  width: 70%;
+  height:100%;
   z-index: 1000;
-  padding: 1rem;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  border-radius: 12px;
+  padding: 2rem;
+  box-sizing: border-box;
+  /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+.menu-overlay.show .mobile-menu {
+  display: block;
 }
 
 .mobile-nav-links {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding: 24px 0;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  font-size: 16px;
 }
 
 .mobile-nav-links li {
@@ -196,11 +223,11 @@ body{
     display: block; /* Show the hamburger icon */
   }
 
-  .mobile-menu {
+  .menu-overlay {
     display: none; /* Hide the mobile menu initially */
   }
 
-  .mobile-menu.show {
+  .menu-overlay.show {
     display: flex; /* Show the mobile menu when the hamburger is clicked */
     flex-direction: column;
     justify-content: space-between ;

@@ -4,5 +4,7 @@
 
 .container img {
     width: 236px;
-        height: 216px;
+    height: 216px;
+    object-fit: cover;
+    border-radius: 4px;
 }

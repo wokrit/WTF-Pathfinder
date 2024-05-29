@@ -42,9 +42,15 @@ function Navbar() {
         setShowMobileMenu(!showMobileMenu);
     };
 
+
+    // const handleClickOutside = (event) => {
+    //     if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+    //         setShowMobileMenu(false);
+    //     }
+    // };
     const handleClickOutside = (event) => {
-        if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
-            setShowMobileMenu(false);
+        if (event.target.classList.contains("menu-overlay")) {
+          setShowMobileMenu(false);
         }
     };
 
@@ -83,29 +89,31 @@ function Navbar() {
             <div className="hamburger-icon" onClick={toggleMobileMenu}>
                 <RxHamburgerMenu style={{width:"24px", height:"24px"}}/>
             </div>
-            <div className={`mobile-menu ${showMobileMenu ? "show" : ""}`} ref={mobileMenuRef}>
-                <ul className="mobile-nav-links">
-                    <li>About</li>
-                    <li>Programs</li>
-                    <li>Tech Careers</li>
-                    <li>Contact</li>
-                </ul>
+            <div className={`menu-overlay ${showMobileMenu ? "show" : ""}`} ref={mobileMenuRef}>
+                <div className="mobile-menu">
+                    <ul className="mobile-nav-links">
+                        <li>About</li>
+                        <li>Programs</li>
+                        <li>Tech Careers</li>
+                        <li>Contact</li>
+                    </ul>
                 
-                {/* <Button type="button" variant="secondary" onClick={handleLogin}>
-                    Login
-                </Button> */}
-               {isLoggedIn ? (
-                    <Button type="button" variant="primary" onClick={handleLogout}>
-                        Log out
-                    </Button>
-                ) : (
-                    <Button type="button" variant="primary" onClick={handleSignup}>
-                        Take Assessment
-                    </Button>
-                )}
-           
-        </div>
-            
+                    <div style={{width:"100%"}}>
+                        {/* <Button type="button" variant="secondary" onClick={handleLogin}>
+                            Login
+                        </Button> */}
+                        {isLoggedIn ? (
+                                <Button type="button" variant="primary" onClick={handleLogout}>
+                                    Log out
+                                </Button>
+                            ) : (
+                                <Button type="button" variant="primary" onClick={handleSignup}>
+                                    Take Assessment
+                                </Button>
+                            )}
+                    </div>
+                </div>
+            </div>
         </nav>
       
     </>

@@ -39,7 +39,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div className={styles.landingContent}>
       {/* {showCookieConsent && <CookieConsent onAccept={handleAccept} onDecline={handleDecline} />} */}
 
       <Navbar />

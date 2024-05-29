@@ -24,4 +24,10 @@
         font-weight: 600;
         line-height: 140%;
     }
+    .landingContent{
+        overflow-x: hidden;
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+    }
 }

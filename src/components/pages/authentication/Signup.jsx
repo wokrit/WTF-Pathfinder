@@ -8,6 +8,7 @@ import Home from "../Home/Home";
 import { IoCloseOutline } from "react-icons/io5";
 import { PiEyeSlashLight } from "react-icons/pi";
 import { PiEyeLight } from "react-icons/pi";
+import { writeUserData } from "../../../firebase";
 
 
 
@@ -72,7 +73,9 @@ function Signup() {
       
       if (password === confirmPassword) {
         try {
-          await signUp(email, password);
+          const userCredential = await signUp(email, password);
+          const user = userCredential.user;
+          writeUserData(user.uid, user.displayName, user.email);
           setIsLoggedIn(true)
           navigate("/instructions");
         } catch (error) {
@@ -86,7 +89,11 @@ function Signup() {
     const handleGoogleSignIn = async (e) => {
       e.preventDefault();
       try {
-        await googleSignIn();
+        // await googleSignIn();
+        const result = await googleSignIn();
+        const user = result.user;
+        // writeUserData(user.uid, name, email);
+        writeUserData(user.uid, user.displayName, user.email);
         setIsLoggedIn(true)
         navigate("/instructions");
       } catch (error) {

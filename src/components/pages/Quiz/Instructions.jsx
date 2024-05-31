@@ -30,8 +30,7 @@ function Instructions() {
                 </header>
                 <div className='instructions-content'>
                     <div className='instruction-point'>
-                        <div className='bullet-point'>
-                        </div>
+                        <img src='public\images\emojione_alarm-clock.svg' alt='alarm-clock' style={{width:"40px", height:"40px"}}/>
                         <div className='instruction'>
                            <p style={{fontWeight:"600"}}>Take Your Time:</p> 
                            <p>
@@ -40,33 +39,31 @@ function Instructions() {
                         </div>
                     </div>
                     <div className='instruction-point'>
-                        <div className='bullet-point'>
-                        </div>
+                        <img src='public\images\exclamation-question-mark.svg' alt='alarm-clock' style={{width:"32px", height:"32px"}}/>
                         <div className='instruction'>
                            <p style={{fontWeight:"600"}}>Two Types of Questions:</p> 
                            <div style={{fontSize:"14px"}}>
-                                Throughout the assessment, you will encounter two types of questions:
-                                <ol>
+                                Throughout the assessment, you will encounter two types of questions: ltiple choice questions and Agree/Disagree statements. Consider each question carefully and choose the response that aligns most closely with your thoughts or feelings.
+                                {/* <ol>
                                         <li>
                                             Multiple Choice Questions: These questions will present you with several answer options, and you'll need to select the one that best represents your preference or experience.
                                         </li>
                                         <li>
                                         Agree and Disagree Statements: You will also encounter statements where you'll be asked to indicate your level of agreement or disagreement. Consider each statement carefully and choose the response that aligns most closely with your thoughts or feelings as follows:
                                         </li>
-                                </ol>
-                                <ul>
+                                </ol> */}
+                                {/* <ul>
                                         <li><span>Strongly Disagree </span>-- If the statement is definitely false</li>
                                         <li><span>Disagree </span> -- If the statement is mostly false</li>
                                         <li><span>Neutral </span> -- If you cannot decide, or if the statement is about equally true or false</li>
                                         <li><span>Agree </span> -- If the statement is mostly true</li>
                                         <li><span>Strongly Agree </span> -- If the statement is definitely true</li>
-                                </ul>
+                                </ul> */}
                            </div>
                         </div>
                     </div>
                     <div className='instruction-point'>
-                        <div className='bullet-point'>
-                        </div>
+                        <img src='public\images\token_idea.svg' alt='idea'style={{width:"52px", height:"52px"}} />    
                         <div className='instruction'>
                            <p style={{fontWeight:"600"}}>Answer Honestly:</p> 
                            <p>

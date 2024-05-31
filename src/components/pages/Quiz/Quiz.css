@@ -439,40 +439,41 @@ footer .footer_copyright {
   .result h2 {
     font-size: 18px;
   }
-  
 }
 
 
+/*====================
+      INSTRUCTIONS PAGE
+======================*/
 
 .instructions-content {
   display: flex;
-  flex-direction: column;
-  gap: 32px;
+  flex-direction: row;
+  gap: 48px;
   /* overflow: auto; */
 
 }
 
 .instruction-point {
   display: flex;
-  flex-direction: row;
-  gap: 32px;
-  align-items: flex-start;
+  flex-direction: column;
+  /* gap: 32px; */
+  gap: 16px;
+  align-items:center
 }
-
-.bullet-point {
-  width: 24px;
-  height: 16px;
-  transform: rotate(-45deg);
-  background: linear-gradient(180deg, #89369E 0%, #F9DEC9 100%);
-  margin-top: 4px;
-}
+/* .instruction-point img {
+  width: 40px;
+  height: 40px;
+} */
 .instruction {
   display: flex;
   flex-direction: column;
   gap:4px;
+  align-items:center
 }
 .instruction p {
   margin: 0;
+  text-align: center;
   
 }
 .instruction div ol {
@@ -512,6 +513,17 @@ footer .footer_copyright {
       transform: rotate(360deg);
   }
   } 
+  @media screen and (max-width: 720px) {
+    .instructions-content {
+      display: flex;
+      flex-direction: column;
+    }
+    .instruction-point {
+      display: flex;
+      flex-direction: column;
+      align-items:center
+    }
+  }
 
   /*====================
       FINAL RESULTS

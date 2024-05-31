@@ -30,7 +30,7 @@ function Instructions() {
                 </header>
                 <div className='instructions-content'>
                     <div className='instruction-point'>
-                        <img src='public\images\emojione_alarm-clock.svg' alt='alarm-clock' style={{width:"40px", height:"40px"}}/>
+                        <img src='\images\emojione_alarm-clock.svg' alt='alarm-clock' style={{width:"40px", height:"40px"}}/>
                         <div className='instruction'>
                            <p style={{fontWeight:"600"}}>Take Your Time:</p> 
                            <p>
@@ -39,7 +39,7 @@ function Instructions() {
                         </div>
                     </div>
                     <div className='instruction-point'>
-                        <img src='public\images\exclamation-question-mark.svg' alt='alarm-clock' style={{width:"32px", height:"32px"}}/>
+                        <img src='\images\exclamation-question-mark.svg' alt='question-mark' style={{width:"32px", height:"32px"}}/>
                         <div className='instruction'>
                            <p style={{fontWeight:"600"}}>Two Types of Questions:</p> 
                            <div style={{fontSize:"14px"}}>
@@ -63,7 +63,7 @@ function Instructions() {
                         </div>
                     </div>
                     <div className='instruction-point'>
-                        <img src='public\images\token_idea.svg' alt='idea'style={{width:"52px", height:"52px"}} />    
+                        <img src='\images\token_idea.svg' alt='idea'style={{width:"52px", height:"52px"}} />    
                         <div className='instruction'>
                            <p style={{fontWeight:"600"}}>Answer Honestly:</p> 
                            <p>

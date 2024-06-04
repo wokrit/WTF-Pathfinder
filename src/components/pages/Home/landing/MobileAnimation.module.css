@@ -26,8 +26,12 @@
 
 @media (max-width: 768px) {
     .container {
-            overflow: hidden;
+            /* overflow: hidden; */
+            overflow-x: scroll;
             padding: var(--app-padding);
+            display: flex;
+            flex-direction: row;
+            
         }
     
     .wrapper {
